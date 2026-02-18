@@ -128,7 +128,7 @@ export default function Sidebar() {
                 <div className={styles.knowledgeContent}>
                     <p className={styles.knowledgeTitle}>Knowledge Base</p>
                     <p className={styles.knowledgeDesc}>Unlock the full potential of EnviGuide with our expert-led documentation.</p>
-                    <a href="#" className={styles.knowledgeLink}>Browse Guides →</a>
+                    <button className={styles.knowledgeLink} onClick={() => navigate('/help-centre')}>Browse Guides →</button>
                 </div>
             </div>
 

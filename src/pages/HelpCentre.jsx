@@ -1,0 +1,292 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import styles from './HelpCentre.module.css'
+
+const CATEGORIES = [
+    {
+        id: 'env',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+        ),
+        title: 'Environment Setup',
+        desc: 'Get your green workspace ready with our foundational configuration guides.',
+    },
+    {
+        id: 'api',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M10 20l4-16M4 8l-4 4 4 4M20 8l4 4-4 4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'API Integration',
+        desc: 'Connect your existing tech stack seamlessly with our robust developer API.',
+    },
+    {
+        id: 'compliance',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 12l2 2 4-4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'Compliance',
+        desc: 'Stay ahead of global environmental standards with our compliance guides.',
+    },
+    {
+        id: 'analytics',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'Data Analytics',
+        desc: 'Extract deep insights from your sustainability metrics with ease.',
+    },
+    {
+        id: 'team',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'Team Management',
+        desc: 'Manage roles and global collaboration for your impact teams.',
+    },
+    {
+        id: 'billing',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="5" width="20" height="14" rx="2" stroke="#22c55e" strokeWidth="2" />
+                <path d="M2 10h20" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+        ),
+        title: 'Billing & Plans',
+        desc: 'Everything you need to know about your subscription and enterprise invoicing.',
+    },
+    {
+        id: 'supplier',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M9 11l3 3L22 4" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'Supplier Questionnaire Guidance',
+        desc: 'Expert guidance on completing and submitting supplier sustainability questionnaires.',
+    },
+]
+
+const POPULAR_ARTICLES = [
+    { tag: 'Configuration', title: 'Setting up your first carbon-offset dashboard' },
+    { tag: 'Billing', title: 'Understanding Enterprise API Credit limits' },
+    { tag: 'Security', title: 'Enabling Multi-Factor Authentication for teams' },
+]
+
+const STATS = [
+    { value: '99.9%', label: 'RESOLUTION RATE' },
+    { value: '<2h', label: 'RESPONSE TIME' },
+    { value: '500+', label: 'HELP ARTICLES' },
+    { value: '24/7', label: 'LIVE SUPPORT' },
+]
+
+const POPULAR_SEARCHES = ['API Keys', 'Metric Report', 'Team Roles']
+
+export default function HelpCentre() {
+    const navigate = useNavigate()
+    const [search, setSearch] = useState('')
+
+    return (
+        <div className={styles.page}>
+
+            {/* ── Top Nav ── */}
+            <nav className={styles.nav}>
+                <button className={styles.navBrand} onClick={() => navigate('/')}>
+                    <div className={styles.navLogo}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                    <span className={styles.navBrandName}>EnviGuide</span>
+                </button>
+
+                <ul className={styles.navLinks}>
+                    <li><a href="#" className={styles.navLink}>Documentation</a></li>
+                    <li><a href="#" className={styles.navLink}>Solutions</a></li>
+                    <li><a href="#" className={styles.navLink}>Community</a></li>
+                    <li><a href="#" className={styles.navLink}>Pricing</a></li>
+                </ul>
+
+                <div className={styles.navActions}>
+                    <button className={styles.signInBtn} onClick={() => navigate('/')}>Sign In</button>
+                    <button className={styles.getStartedBtn}>Get Started</button>
+                </div>
+            </nav>
+
+            {/* ── Hero ── */}
+            <section className={styles.hero}>
+                <h1 className={styles.heroTitle}>
+                    How can we help you<br />
+                    <em className={styles.heroAccent}>sustain</em> more?
+                </h1>
+
+                <div className={styles.searchBox}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <circle cx="11" cy="11" r="8" stroke="#9ca3af" strokeWidth="2" />
+                        <path d="M21 21l-4.35-4.35" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                    <input
+                        className={styles.searchInput}
+                        placeholder="Search for articles, sustainability guides, or API docs..."
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
+                    <button className={styles.searchBtn}>Search</button>
+                </div>
+
+                <div className={styles.popularRow}>
+                    <span className={styles.popularLabel}>POPULAR</span>
+                    {POPULAR_SEARCHES.map(s => (
+                        <button key={s} className={styles.popularChip}>{s}</button>
+                    ))}
+                </div>
+            </section>
+
+            {/* ── Browse by Category ── */}
+            <section className={styles.section}>
+                <div className={styles.sectionHead}>
+                    <div>
+                        <h2 className={styles.sectionTitle}>Browse by Category</h2>
+                        <p className={styles.sectionSub}>Find exactly what you need through our specialised resource hubs.</p>
+                    </div>
+                    <a href="#" className={styles.viewAll}>
+                        View All Categories
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div className={styles.categoryGrid}>
+                    {CATEGORIES.map((cat) => (
+                        <div
+                            key={cat.id}
+                            className={styles.categoryCard}
+                            onClick={() => {
+                                if (cat.id === 'supplier') navigate('/supplier-questionnaire')
+                            }}
+                            style={{ cursor: cat.id === 'supplier' ? 'pointer' : 'default' }}
+                        >
+                            <div className={styles.catIconWrap}>{cat.icon}</div>
+                            <h3 className={styles.catTitle}>{cat.title}</h3>
+                            <p className={styles.catDesc}>{cat.desc}</p>
+                        </div>
+                    ))}
+
+                    {/* Chat with us card */}
+                    <div className={`${styles.categoryCard} ${styles.chatCard}`}>
+                        <div className={styles.chatBadge}>NEED A SPECIALIST?</div>
+                        <h3 className={styles.chatTitle}>Chat with us</h3>
+                        <button className={styles.chatBtn}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            Start Conversation
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Popular Articles + Fresh Insights ── */}
+            <section className={styles.section}>
+                <div className={styles.bottomGrid}>
+
+                    {/* Popular Articles */}
+                    <div>
+                        <h2 className={styles.colTitle}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            Popular Articles
+                        </h2>
+                        <div className={styles.articleList}>
+                            {POPULAR_ARTICLES.map(a => (
+                                <a key={a.title} href="#" className={styles.articleRow}>
+                                    <div>
+                                        <span className={styles.articleTag}>{a.tag}</span>
+                                        <p className={styles.articleTitle}>{a.title}</p>
+                                    </div>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Fresh Insights */}
+                    <div>
+                        <h2 className={styles.colTitle}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            Fresh Insights
+                        </h2>
+
+                        {/* Featured Guide */}
+                        <div className={styles.featuredCard}>
+                            <span className={styles.featuredBadge}>FEATURED GUIDE</span>
+                            <h3 className={styles.featuredTitle}>The 2024 Guide to Global Compliance Reports</h3>
+                            <p className={styles.featuredDesc}>Master the new EU sustainability directives with our step-by-step reporting framework.</p>
+                            <button className={styles.readNowBtn}>Read Now</button>
+                        </div>
+
+                        {/* Extra insight row */}
+                        <a href="#" className={styles.insightRow}>
+                            <div>
+                                <span className={styles.articleTag}>Analytics</span>
+                                <p className={styles.articleTitle}>Predicting waste reduction trends with AI</p>
+                            </div>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* ── Stats Bar ── */}
+            <div className={styles.statsBar}>
+                {STATS.map(s => (
+                    <div key={s.label} className={styles.statItem}>
+                        <span className={styles.statValue}>{s.value}</span>
+                        <span className={styles.statLabel}>{s.label}</span>
+                    </div>
+                ))}
+            </div>
+
+            {/* ── Footer ── */}
+            <footer className={styles.footer}>
+                <div className={styles.footerBrand}>
+                    <div className={styles.navLogo}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                    <span className={styles.footerBrandName}>EnviGuide</span>
+                </div>
+                <div className={styles.footerLinks}>
+                    <a href="#">Status</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <span className={styles.footerCopy}>© 2024 EnviGuide Inc. All rights reserved.</span>
+            </footer>
+
+        </div>
+    )
+}

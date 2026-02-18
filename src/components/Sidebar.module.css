@@ -152,6 +152,12 @@
     text-decoration: none;
     margin-top: 2px;
     transition: opacity 0.15s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    text-align: left;
 }
 
 .knowledgeLink:hover {

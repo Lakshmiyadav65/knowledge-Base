@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import styles from './Support.module.css'
 
 const CATEGORIES = [
-    { value: '', label: 'Select a category' },
-    { value: 'technical', label: 'Technical Issue' },
-    { value: 'billing', label: 'Billing & Subscription' },
-    { value: 'data', label: 'Data & Reporting' },
+    { value: 'technical', label: '🔧 Technical Issue' },
+    { value: 'billing', label: '💳 Billing & Subscription' },
+    { value: 'data', label: '📊 Data & Reporting' },
+    { value: 'account', label: '👤 Account & Access' },
+    { value: 'feedback', label: '💬 General Feedback' },
+    { value: 'other', label: '📋 Other' },
 ]
 
 export default function Support() {
@@ -40,47 +42,39 @@ export default function Support() {
 
     return (
         <div className={styles.page}>
-            {/* Top Nav */}
-            <nav className={styles.nav}>
-                <button className={styles.brand} onClick={() => navigate('/')}>
+
+            {/* Slim Top Bar */}
+            <div className={styles.topBar}>
+                <button className={styles.backBtn} onClick={() => navigate('/')}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Back to Dashboard
+                </button>
+                <div className={styles.topBarBrand}>
                     <div className={styles.brandIcon}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
-                    <span className={styles.brandName}>EnviGuide</span>
-                </button>
-
-                <ul className={styles.navLinks}>
-                    <li><button className={styles.navLink} onClick={() => navigate('/')}>Home</button></li>
-                    <li><button className={styles.navLink}>Explore</button></li>
-                    <li><button className={styles.navLink}>Community</button></li>
-                    <li><button className={`${styles.navLink} ${styles.navLinkActive}`}>Contact</button></li>
-                </ul>
-
-                <div className={styles.navActions}>
-                    <button className={styles.iconBtn} title="Notifications">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
-                    <button className={styles.iconBtn} title="Profile">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </button>
+                    <span className={styles.brandName}>EnviGuide Support</span>
                 </div>
-            </nav>
+            </div>
 
             {/* Page Body */}
             <div className={styles.wrapper}>
 
                 {/* Hero */}
                 <div className={styles.hero}>
-                    <h1 className={styles.heroTitle}>Get in Touch</h1>
+                    <div className={styles.heroBadge}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        Support Center
+                    </div>
+                    <h1 className={styles.heroTitle}>How can we help you?</h1>
                     <p className={styles.heroSub}>
-                        Have a question or feedback? We're here to help you navigate your environmental
-                        journey. Our team usually responds within 24 hours.
+                        Our team typically responds within 24 hours. Fill in the form and we'll get back to you.
                     </p>
                 </div>
 
@@ -93,14 +87,14 @@ export default function Support() {
                         {/* Direct Support */}
                         <div className={styles.infoCard}>
                             <div className={styles.cardHeader}>
-                                <span className={styles.cardIcon}>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <span className={styles.cardIconWrap}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                                         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </span>
                                 <span className={styles.cardTitle}>Direct Support</span>
                             </div>
-                            <p className={styles.cardText}>Prefer email? Reach out directly to our support team at:</p>
+                            <p className={styles.cardText}>Prefer email? Reach out directly to our support team.</p>
                             <a href="mailto:help@enviguide.com" className={styles.emailLink}>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -110,11 +104,39 @@ export default function Support() {
                             </a>
                         </div>
 
+                        {/* Response Time */}
+                        <div className={styles.infoCard}>
+                            <div className={styles.cardHeader}>
+                                <span className={styles.cardIconWrap}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
+                                        <path d="M12 6v6l4 2" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </span>
+                                <span className={styles.cardTitle}>Response Times</span>
+                            </div>
+                            <div className={styles.responseList}>
+                                {[
+                                    { label: 'Critical Issues', time: '< 2 hours', dot: '#ef4444' },
+                                    { label: 'General Support', time: '< 24 hours', dot: '#f59e0b' },
+                                    { label: 'Feedback', time: '< 48 hours', dot: '#22c55e' },
+                                ].map(r => (
+                                    <div key={r.label} className={styles.responseRow}>
+                                        <div className={styles.responseRowLeft}>
+                                            <span className={styles.responseDot} style={{ background: r.dot }} />
+                                            <span className={styles.responseLabel}>{r.label}</span>
+                                        </div>
+                                        <span className={styles.responseTime}>{r.time}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* Quick Links */}
                         <div className={styles.infoCard}>
                             <div className={styles.cardHeader}>
-                                <span className={styles.cardIcon}>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <span className={styles.cardIconWrap}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                                         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </span>
@@ -128,18 +150,17 @@ export default function Support() {
                                 ].map(({ icon, label }) => (
                                     <li key={label}>
                                         <a href="#" className={styles.quickLink}>
-                                            <QuickIcon type={icon} />
-                                            {label}
+                                            <span className={styles.quickLinkLeft}>
+                                                <QuickIcon type={icon} />
+                                                {label}
+                                            </span>
+                                            <svg className={styles.quickArrow} width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
                                         </a>
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-
-                        {/* Forest Card */}
-                        <div className={styles.forestCard}>
-                            <div className={styles.forestBg} />
-                            <div className={styles.forestLabel}>Located in: San Francisco, CA</div>
                         </div>
 
                     </div>
@@ -149,15 +170,15 @@ export default function Support() {
                         {!sent ? (
                             <form onSubmit={handleSubmit} noValidate>
 
+                                <div className={styles.formCardHeader}>
+                                    <h2 className={styles.formCardTitle}>Send us a message</h2>
+                                    <p className={styles.formCardSub}>Fill in the details below and we'll respond promptly.</p>
+                                </div>
+
                                 {/* Name + Email */}
                                 <div className={styles.formRow}>
                                     <div className={styles.formGroup}>
-                                        <label className={styles.label} htmlFor="sup-name">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                                                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                            User Name
-                                        </label>
+                                        <label className={styles.label} htmlFor="sup-name">Full Name</label>
                                         <input
                                             id="sup-name"
                                             className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
@@ -169,13 +190,7 @@ export default function Support() {
                                     </div>
 
                                     <div className={styles.formGroup}>
-                                        <label className={styles.label} htmlFor="sup-email">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                                <path d="M12 8v4M12 16h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
-                                            </svg>
-                                            E-mail ID
-                                        </label>
+                                        <label className={styles.label} htmlFor="sup-email">Email Address</label>
                                         <input
                                             id="sup-email"
                                             type="email"
@@ -188,51 +203,36 @@ export default function Support() {
                                     </div>
                                 </div>
 
-                                {/* Category */}
-                                <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
-                                    <label className={styles.label} htmlFor="sup-category">
-                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            <path d="M22 4L12 14.01l-3-3" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                        What the issue is
-                                    </label>
-                                    <div className={styles.selectWrap}>
-                                        <select
-                                            id="sup-category"
-                                            className={`${styles.select} ${errors.category ? styles.inputError : ''}`}
-                                            value={form.category}
-                                            onChange={e => handleChange('category', e.target.value)}
-                                        >
-                                            {CATEGORIES.map(c => (
-                                                <option key={c.value} value={c.value}>{c.label}</option>
-                                            ))}
-                                        </select>
-                                        <svg className={styles.selectArrow} width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                            <path d="M6 9l6 6 6-6" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
+                                {/* Category — Pill Chips */}
+                                <div className={styles.formGroup} style={{ marginBottom: '22px' }}>
+                                    <label className={styles.label}>Issue Category</label>
+                                    <div className={styles.chipGrid}>
+                                        {CATEGORIES.map(c => (
+                                            <button
+                                                key={c.value}
+                                                type="button"
+                                                className={`${styles.chip} ${form.category === c.value ? styles.chipActive : ''}`}
+                                                onClick={() => handleChange('category', c.value)}
+                                            >
+                                                {c.label}
+                                            </button>
+                                        ))}
                                     </div>
                                     {errors.category && <span className={styles.fieldError}>{errors.category}</span>}
                                 </div>
 
                                 {/* Description */}
-                                <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
+                                <div className={styles.formGroup} style={{ marginBottom: '22px' }}>
                                     <div className={styles.descHeader}>
-                                        <label className={styles.label} htmlFor="sup-desc">
-                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
-                                            </svg>
-                                            Description
-                                        </label>
+                                        <label className={styles.label} htmlFor="sup-desc">Description</label>
                                         <span className={styles.charCount} style={{ color: form.description.length > 450 ? '#ef4444' : '#9ca3af' }}>
-                                            {form.description.length > 0 ? `${form.description.length} / 500 characters` : 'Max 500 characters'}
+                                            {form.description.length} / 500
                                         </span>
                                     </div>
                                     <textarea
                                         id="sup-desc"
                                         className={`${styles.textarea} ${errors.description ? styles.inputError : ''}`}
-                                        placeholder="Tell us more about your request..."
+                                        placeholder="Describe your issue in detail so we can help you faster..."
                                         maxLength={500}
                                         value={form.description}
                                         onChange={e => handleChange('description', e.target.value)}
@@ -256,7 +256,7 @@ export default function Support() {
                                         </>
                                     )}
                                 </button>
-                                <p className={styles.disclaimer}>By clicking "Send Message", you agree to our terms and privacy policy.</p>
+                                <p className={styles.disclaimer}>By submitting, you agree to our terms and privacy policy.</p>
                             </form>
                         ) : (
                             <div className={styles.successState}>
@@ -265,16 +265,13 @@ export default function Support() {
                                         <path d="M20 6L9 17l-5-5" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
-                                <h2 className={styles.successTitle}>Message Sent Successfully!</h2>
+                                <h2 className={styles.successTitle}>Message Sent!</h2>
                                 <p className={styles.successDesc}>
-                                    Thank you for reaching out. Our team has received your message and will get back to you within 24 hours.
+                                    Thank you for reaching out. Our team will get back to you within 24 hours.
                                 </p>
-                                <button className={styles.backBtn} onClick={() => navigate('/')}>
+                                <button className={styles.successBackBtn} onClick={() => navigate('/')}>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                        <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
-                                        <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
-                                        <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
-                                        <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="2" />
+                                        <path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                     Back to Dashboard
                                 </button>
@@ -284,35 +281,24 @@ export default function Support() {
 
                 </div>
             </div>
-
-            {/* Footer */}
-            <footer className={styles.footer}>
-                <span>© 2024 EnviGuide. All rights reserved.</span>
-                <span className={styles.footerDot}>•</span>
-                <div className={styles.footerLinks}>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Instagram</a>
-                </div>
-            </footer>
         </div>
     )
 }
 
 function QuickIcon({ type }) {
     if (type === 'info') return (
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
             <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
     )
     if (type === 'users') return (
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
     return (
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
