@@ -80,9 +80,9 @@ const CATEGORIES = [
 ]
 
 const POPULAR_ARTICLES = [
-    { tag: 'Configuration', title: 'Setting up your first carbon-offset dashboard' },
-    { tag: 'Billing', title: 'Understanding Enterprise API Credit limits' },
-    { tag: 'Security', title: 'Enabling Multi-Factor Authentication for teams' },
+    { tag: 'Getting Started', title: 'What is EnviGuide? — Platform Overview', path: '/article-what-is-enviguide' },
+    { tag: 'Getting Started', title: 'How the Platform Works — Step-by-Step Walkthrough', path: '/article-platform-walkthrough' },
+    { tag: 'Supplier Guide', title: 'How to Fill Out a Supplier ESG Questionnaire', path: '/supplier-questionnaire' },
 ]
 
 const STATS = [
@@ -101,29 +101,15 @@ export default function HelpCentre() {
     return (
         <div className={styles.page}>
 
-            {/* ── Top Nav ── */}
-            <nav className={styles.nav}>
-                <button className={styles.navBrand} onClick={() => navigate('/')}>
-                    <div className={styles.navLogo}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                    <span className={styles.navBrandName}>EnviGuide</span>
+            {/* ── Minimal Top Bar ── */}
+            <div className={styles.topBar}>
+                <button className={styles.backBtn} onClick={() => navigate('/')}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Back to Dashboard
                 </button>
-
-                <ul className={styles.navLinks}>
-                    <li><a href="#" className={styles.navLink}>Documentation</a></li>
-                    <li><a href="#" className={styles.navLink}>Solutions</a></li>
-                    <li><a href="#" className={styles.navLink}>Community</a></li>
-                    <li><a href="#" className={styles.navLink}>Pricing</a></li>
-                </ul>
-
-                <div className={styles.navActions}>
-                    <button className={styles.signInBtn} onClick={() => navigate('/')}>Sign In</button>
-                    <button className={styles.getStartedBtn}>Get Started</button>
-                </div>
-            </nav>
+            </div>
 
             {/* ── Hero ── */}
             <section className={styles.hero}>
@@ -176,8 +162,9 @@ export default function HelpCentre() {
                             className={styles.categoryCard}
                             onClick={() => {
                                 if (cat.id === 'supplier') navigate('/supplier-questionnaire')
+                                if (cat.id === 'env') navigate('/article-what-is-enviguide')
                             }}
-                            style={{ cursor: cat.id === 'supplier' ? 'pointer' : 'default' }}
+                            style={{ cursor: (cat.id === 'supplier' || cat.id === 'env') ? 'pointer' : 'default' }}
                         >
                             <div className={styles.catIconWrap}>{cat.icon}</div>
                             <h3 className={styles.catTitle}>{cat.title}</h3>
@@ -213,7 +200,12 @@ export default function HelpCentre() {
                         </h2>
                         <div className={styles.articleList}>
                             {POPULAR_ARTICLES.map(a => (
-                                <a key={a.title} href="#" className={styles.articleRow}>
+                                <div
+                                    key={a.title}
+                                    className={styles.articleRow}
+                                    onClick={() => a.path && navigate(a.path)}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     <div>
                                         <span className={styles.articleTag}>{a.tag}</span>
                                         <p className={styles.articleTitle}>{a.title}</p>
@@ -221,7 +213,7 @@ export default function HelpCentre() {
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                         <path d="M5 12h14M12 5l7 7-7 7" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                </a>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -238,9 +230,9 @@ export default function HelpCentre() {
                         {/* Featured Guide */}
                         <div className={styles.featuredCard}>
                             <span className={styles.featuredBadge}>FEATURED GUIDE</span>
-                            <h3 className={styles.featuredTitle}>The 2024 Guide to Global Compliance Reports</h3>
-                            <p className={styles.featuredDesc}>Master the new EU sustainability directives with our step-by-step reporting framework.</p>
-                            <button className={styles.readNowBtn}>Read Now</button>
+                            <h3 className={styles.featuredTitle}>How the EnviGuide Platform Works</h3>
+                            <p className={styles.featuredDesc}>A complete step-by-step walkthrough — Dashboard, PCF Requests, Supplier Questionnaires, and Reports.</p>
+                            <button className={styles.readNowBtn} onClick={() => navigate('/article-platform-walkthrough')}>Read Now</button>
                         </div>
 
                         {/* Extra insight row */}
@@ -268,24 +260,7 @@ export default function HelpCentre() {
                 ))}
             </div>
 
-            {/* ── Footer ── */}
-            <footer className={styles.footer}>
-                <div className={styles.footerBrand}>
-                    <div className={styles.navLogo}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                            <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                    <span className={styles.footerBrandName}>EnviGuide</span>
-                </div>
-                <div className={styles.footerLinks}>
-                    <a href="#">Status</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Contact</a>
-                </div>
-                <span className={styles.footerCopy}>© 2024 EnviGuide Inc. All rights reserved.</span>
-            </footer>
+
 
         </div>
     )

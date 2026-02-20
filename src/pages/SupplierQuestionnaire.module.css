@@ -138,9 +138,9 @@
     display: flex;
     flex-direction: column;
     padding: 24px 0 24px;
-    height: calc(100vh - 56px);
+    height: 100vh;
     position: sticky;
-    top: 56px;
+    top: 0;
     overflow-y: auto;
 }
 
@@ -374,12 +374,54 @@
     letter-spacing: -0.01em;
 }
 
+/* Section intro banner (e.g. Scope 4 description) */
+.sectionBanner {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+}
+
+.sectionBannerText {
+    font-size: 13px;
+    color: #166534;
+    line-height: 1.65;
+}
+
 /* ── Accordion ── */
 .questionList {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 28px;
+}
+
+/* Sub-group divider header (e.g. 5.1 Materials Details) */
+.groupHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.groupLabel {
+    font-size: 11px;
+    font-weight: 700;
+    color: #16a34a;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.groupLine {
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
 }
 
 .accordion {
@@ -494,7 +536,7 @@
 }
 
 .colText {
-    font-size: 13px;
+    font-size: 15px;
     color: #374151;
     line-height: 1.7;
 }
@@ -540,6 +582,31 @@
     font-size: 12.5px;
     color: #3b82f6;
     line-height: 1.6;
+}
+
+/* ── Empty State ── */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 60px 24px;
+    background: #fff;
+    border: 1.5px dashed #e5e7eb;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.emptyTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.emptyDesc {
+    font-size: 13px;
+    color: #9ca3af;
 }
 
 /* ── Responsive ── */
