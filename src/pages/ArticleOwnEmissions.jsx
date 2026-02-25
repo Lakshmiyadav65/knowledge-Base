@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import styles from './Article.module.css'
 
 const SECTIONS = [
@@ -8,6 +9,27 @@ const SECTIONS = [
 
 export default function ArticleOwnEmissions() {
     const navigate = useNavigate()
+    const [activeSection, setActiveSection] = useState('')
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id)
+                    }
+                })
+            },
+            { rootMargin: '-20% 0% -35% 0%', threshold: 0.1 }
+        )
+
+        SECTIONS.forEach((s) => {
+            const el = document.getElementById(s.id)
+            if (el) observer.observe(el)
+        })
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <div className={styles.page}>
@@ -30,7 +52,11 @@ export default function ArticleOwnEmissions() {
                     <p className={styles.tocLabel}>ON THIS PAGE</p>
                     <nav className={styles.tocNav}>
                         {SECTIONS.map(s => (
-                            <a key={s.id} href={`#${s.id}`} className={styles.tocLink}>
+                            <a
+                                key={s.id}
+                                href={`#${s.id}`}
+                                className={`${styles.tocLink} ${activeSection === s.id ? styles.tocLinkActive : ''}`}
+                            >
                                 {s.label}
                             </a>
                         ))}
@@ -137,10 +163,14 @@ export default function ArticleOwnEmissions() {
                             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                                 <div style={{
                                     background: '#f0fdf4',
-                                    padding: '12px',
+                                    width: '48px',
+                                    height: '48px',
                                     borderRadius: '12px',
                                     display: 'flex',
-                                    border: '1px solid #dcfce7'
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    border: '1px solid #dcfce7',
+                                    flexShrink: 0
                                 }}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

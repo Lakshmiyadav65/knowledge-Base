@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import styles from './Article.module.css'
 
 const SECTIONS = [
@@ -13,6 +14,27 @@ const SECTIONS = [
 
 export default function ArticlePCFWorkflow() {
     const navigate = useNavigate()
+    const [activeSection, setActiveSection] = useState('')
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id)
+                    }
+                })
+            },
+            { rootMargin: '-20% 0% -35% 0%', threshold: 0.1 }
+        )
+
+        SECTIONS.forEach((s) => {
+            const el = document.getElementById(s.id)
+            if (el) observer.observe(el)
+        })
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <div className={styles.page}>
@@ -35,7 +57,11 @@ export default function ArticlePCFWorkflow() {
                     <p className={styles.tocLabel}>ON THIS PAGE</p>
                     <nav className={styles.tocNav}>
                         {SECTIONS.map(s => (
-                            <a key={s.id} href={`#${s.id}`} className={styles.tocLink}>
+                            <a
+                                key={s.id}
+                                href={`#${s.id}`}
+                                className={`${styles.tocLink} ${activeSection === s.id ? styles.tocLinkActive : ''}`}
+                            >
                                 {s.label}
                             </a>
                         ))}

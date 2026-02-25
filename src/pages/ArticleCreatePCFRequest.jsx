@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import styles from './Article.module.css'
 
 const SECTIONS = [
@@ -15,6 +16,27 @@ const SECTIONS = [
 
 export default function ArticleCreatePCFRequest() {
     const navigate = useNavigate()
+    const [activeSection, setActiveSection] = useState('')
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id)
+                    }
+                })
+            },
+            { rootMargin: '-20% 0% -35% 0%', threshold: 0.1 }
+        )
+
+        SECTIONS.forEach((s) => {
+            const el = document.getElementById(s.id)
+            if (el) observer.observe(el)
+        })
+
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <div className={styles.page}>
@@ -37,7 +59,11 @@ export default function ArticleCreatePCFRequest() {
                     <p className={styles.tocLabel}>ON THIS PAGE</p>
                     <nav className={styles.tocNav}>
                         {SECTIONS.map(s => (
-                            <a key={s.id} href={`#${s.id}`} className={styles.tocLink}>
+                            <a
+                                key={s.id}
+                                href={`#${s.id}`}
+                                className={`${styles.tocLink} ${activeSection === s.id ? styles.tocLinkActive : ''}`}
+                            >
                                 {s.label}
                             </a>
                         ))}
@@ -179,7 +205,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 1. Request Title */}
                         <div style={{ marginTop: '40px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f0fdf4', padding: '10px', borderRadius: '12px', border: '1px solid #dcfce7' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f0fdf4', borderRadius: '12px', border: '1px solid #dcfce7' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -199,7 +225,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 2. Priority Level */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#fff7ed', padding: '10px', borderRadius: '12px', border: '1px solid #ffedd5' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#fff7ed', borderRadius: '12px', border: '1px solid #ffedd5' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -231,7 +257,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 3. Due Date */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#eff6ff', padding: '10px', borderRadius: '12px', border: '1px solid #dbeafe' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -251,7 +277,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 4. Requesting Organization */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f5f3ff', padding: '10px', borderRadius: '12px', border: '1px solid #ede9fe' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f5f3ff', borderRadius: '12px', border: '1px solid #ede9fe' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -271,7 +297,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 5. Request Description */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f8fafc', padding: '10px', borderRadius: '12px', border: '1px solid #f1f5f9' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f8fafc', borderRadius: '12px', border: '1px solid #f1f5f9' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M4 6h16M4 12h16M4 18h7" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -305,7 +331,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 1. Product Category */}
                         <div style={{ marginTop: '40px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f0fdf4', padding: '10px', borderRadius: '12px', border: '1px solid #dcfce7' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f0fdf4', borderRadius: '12px', border: '1px solid #dcfce7' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -325,7 +351,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 2 & 3. Component Details */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#eff6ff', padding: '10px', borderRadius: '12px', border: '1px solid #dbeafe' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#eff6ff', borderRadius: '12px', border: '1px solid #dbeafe' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -350,7 +376,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* 4. Product Code */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f5f3ff', padding: '10px', borderRadius: '12px', border: '1px solid #ede9fe' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f5f3ff', borderRadius: '12px', border: '1px solid #ede9fe' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M7 7h.01M7 11h.01M7 15h.01M10 7h.01M10 11h.01M10 15h.01M13 7h.01M13 11h.01M13 15h.01M17 7h.01M17 11h.01M17 15h.01" stroke="#8b5cf6" strokeWidth="3" strokeLinecap="round" />
                                         <rect x="3" y="3" width="18" height="18" rx="2" stroke="#8b5cf6" strokeWidth="2" />
@@ -371,7 +397,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* Specifications */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#fef3c7', padding: '10px', borderRadius: '12px', border: '1px solid #fde68a' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#fef3c7', borderRadius: '12px', border: '1px solid #fde68a' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -391,7 +417,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* BOM Section */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#ecfdf5', padding: '10px', borderRadius: '12px', border: '1px solid #d1fae5' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#ecfdf5', borderRadius: '12px', border: '1px solid #d1fae5' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 17v-2m3 2v-4m3 2v-6m-8-5l-1.5 1.5M16 4l1.5 1.5M3 10V4h6m12 10v6h-6" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -440,7 +466,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* Technical Spec */}
                         <div style={{ marginTop: '40px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#f8fafc', padding: '10px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -476,7 +502,7 @@ export default function ArticleCreatePCFRequest() {
                         {/* Product Images */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ background: '#fdf2f8', padding: '10px', borderRadius: '12px', border: '1px solid #fce7f3' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#fdf2f8', borderRadius: '12px', border: '1px solid #fce7f3' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#db2777" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -506,20 +532,59 @@ export default function ArticleCreatePCFRequest() {
                     <section id="form-step4" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Step 4: Review & Submit</h2>
                         <p className={styles.body}>In this final step, you'll review all the information you've entered and submit your PCF request.</p>
-                        <div className={styles.numberedSteps} style={{ background: '#f0fdf4', border: '1px solid #dcfce7' }}>
-                            {[
-                                'Review all information from Steps 1-3',
-                                'Make any necessary corrections or changes',
-                                'Click Submit to finalize your PCF request',
-                                'Save your tracking number for future reference'
-                            ].map((step, i) => (
-                                <div key={i} className={styles.numberedStep} style={{ borderBottom: i === 3 ? 'none' : '1px solid #dcfce7' }}>
-                                    <div className={styles.stepCircle} style={{ background: '#22c55e' }}>{i + 1}</div>
-                                    <div className={styles.stepContent}>
-                                        <p className={styles.stepBody} style={{ fontWeight: '600' }}>{step}</p>
-                                    </div>
+                        <div style={{
+                            background: '#ffffff',
+                            border: '1px solid #e2e8f0',
+                            borderRadius: '20px',
+                            padding: '32px',
+                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                        }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#22c55e' }}></div>
+                                    <span style={{ fontSize: '12px', fontWeight: '700', color: '#22c55e', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Submission Checklist</span>
                                 </div>
-                            ))}
+                                <span style={{ fontSize: '12px', background: '#f0fdf4', color: '#16a34a', padding: '4px 12px', borderRadius: '12px', fontWeight: '700' }}>Ready to Submit</span>
+                            </div>
+
+                            <div style={{ display: 'grid', gap: '20px' }}>
+                                {[
+                                    { title: 'Information Review', desc: 'Verify all data from Steps 1, 2, and 3 for accuracy.' },
+                                    { title: 'Validation Check', desc: 'Ensure all required fields and documents are present.' },
+                                    { title: 'Final submission', desc: 'Confirm and lock all details by clicking the Submit button.' },
+                                    { title: 'Tracking ID', desc: 'Save the generated PCF tracking number for your records.' }
+                                ].map((step, i) => (
+                                    <div key={i} style={{
+                                        display: 'flex',
+                                        gap: '20px',
+                                        alignItems: 'flex-start',
+                                        padding: '16px',
+                                        borderRadius: '12px',
+                                        background: '#f8fafc',
+                                        border: '1px solid #f1f5f9'
+                                    }}>
+                                        <div style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            width: '32px',
+                                            height: '32px',
+                                            flexShrink: 0,
+                                            background: '#22c55e',
+                                            color: '#fff',
+                                            borderRadius: '50%',
+                                            fontSize: '14px',
+                                            fontWeight: '800'
+                                        }}>
+                                            {i + 1}
+                                        </div>
+                                        <div>
+                                            <p style={{ fontSize: '15px', fontWeight: '800', color: '#111827', margin: '0 0 4px 0' }}>{step.title}</p>
+                                            <p style={{ fontSize: '13.5px', color: '#64748b', margin: 0, lineHeight: '1.5' }}>{step.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </section>
 
@@ -527,15 +592,48 @@ export default function ArticleCreatePCFRequest() {
 
                     {/* Portfolio Constraint */}
                     <section id="portfolio-constraint" className={styles.section}>
-                        <div className={styles.calloutBlue}>
-                            <h3 style={{ margin: 0, fontSize: '17px', color: '#1e40af', marginBottom: '12px' }}>Important: Product Portfolio Constraint</h3>
-                            <p className={styles.calloutText}>
-                                <strong>Key Requirement:</strong> Only products that are listed in the <strong>Product Portfolio</strong> can be selected for PCF requests.
-                            </p>
-                            <ul className={styles.bullets} style={{ marginTop: '12px', fontSize: '14px', color: '#1e3a8a' }}>
-                                <li>You can ONLY create PCF requests for products that already exist in the Portfolio</li>
-                                <li>If your product is not in the Portfolio, contact your administrator to add it first</li>
-                            </ul>
+                        <div style={{
+                            background: '#eff6ff',
+                            border: '1px solid #dbeafe',
+                            borderRadius: '16px',
+                            padding: '24px',
+                            display: 'flex',
+                            gap: '20px',
+                            alignItems: 'flex-start'
+                        }}>
+                            <div style={{
+                                width: '48px',
+                                height: '48px',
+                                background: '#dbeafe',
+                                borderRadius: '12px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0
+                            }}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 15v2m0-8V7m0-4L3 21h18L12 3z" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                            <div style={{ flex: 1 }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                                    <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '800', color: '#1e40af' }}>Portfolio Constraint</h3>
+                                    <span style={{ fontSize: '10px', background: '#2563eb', color: '#fff', padding: '2px 8px', borderRadius: '4px', fontWeight: '700', textTransform: 'uppercase' }}>Mandatory</span>
+                                </div>
+                                <p style={{ fontSize: '14.5px', color: '#3b82f6', lineHeight: '1.6', margin: '0 0 16px 0', fontWeight: '500' }}>
+                                    Only products listed in the <strong>Product Portfolio</strong> can be selected. If a product is missing, it must be added by an admin before a PCF request can be initiated.
+                                </p>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2563eb' }}></div>
+                                        <span style={{ fontSize: '13px', color: '#1e40af', fontWeight: '600' }}>Existing Portfolio Products</span>
+                                    </div>
+                                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2563eb' }}></div>
+                                        <span style={{ fontSize: '13px', color: '#1e40af', fontWeight: '600' }}>Admin Authorization Required</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -588,6 +686,6 @@ export default function ArticleCreatePCFRequest() {
 
                 </article>
             </div>
-        </div >
+        </div>
     )
 }

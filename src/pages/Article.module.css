@@ -131,6 +131,14 @@
     padding-left: 14px;
 }
 
+.tocLinkActive {
+    color: #22c55e;
+    border-left-color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+    padding-left: 14px;
+    font-weight: 700;
+}
+
 /* Help Card in TOC */
 .helpCard {
     background: #f9fafb;
