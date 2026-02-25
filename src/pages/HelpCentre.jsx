@@ -77,6 +77,17 @@ const CATEGORIES = [
         title: 'Supplier Questionnaire Guidance',
         desc: 'Expert guidance on completing and submitting supplier sustainability questionnaires.',
     },
+    {
+        id: 'pcf',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+        ),
+        title: 'PCF Manuals',
+        desc: 'Complete step-by-step documentation for Product Carbon Footprint workflows.',
+    },
 ]
 
 const POPULAR_ARTICLES = [
@@ -163,8 +174,9 @@ export default function HelpCentre() {
                             onClick={() => {
                                 if (cat.id === 'supplier') navigate('/supplier-questionnaire')
                                 if (cat.id === 'env') navigate('/article-what-is-enviguide')
+                                if (cat.id === 'pcf') navigate('/manuals-pcf')
                             }}
-                            style={{ cursor: (cat.id === 'supplier' || cat.id === 'env') ? 'pointer' : 'default' }}
+                            style={{ cursor: (cat.id === 'supplier' || cat.id === 'env' || cat.id === 'pcf') ? 'pointer' : 'default' }}
                         >
                             <div className={styles.catIconWrap}>{cat.icon}</div>
                             <h3 className={styles.catTitle}>{cat.title}</h3>

@@ -30,14 +30,44 @@ export default function Support() {
     const handleChange = (field, value) => {
         setForm(f => ({ ...f, [field]: value }))
         if (errors[field]) setErrors(e => ({ ...e, [field]: undefined }))
+        if (errors.submit) setErrors(e => ({ ...e, submit: undefined }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const errs = validate()
         if (Object.keys(errs).length) { setErrors(errs); return }
+
         setSending(true)
-        setTimeout(() => { setSending(false); setSent(true) }, 1200)
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE",
+                    name: form.name,
+                    email: form.email,
+                    subject: `Support: ${CATEGORIES.find(c => c.value === form.category)?.label || form.category}`,
+                    message: form.description,
+                    from_name: "EnviGuide Dashboard"
+                }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                setSent(true);
+            } else {
+                setErrors({ submit: result.message || "Something went wrong. Please try again." });
+            }
+        } catch (error) {
+            setErrors({ submit: "Network error. Please try again later." });
+        } finally {
+            setSending(false)
+        }
     }
 
     return (
@@ -100,36 +130,8 @@ export default function Support() {
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M22 6l-10 7L2 6" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                help@enviguide.com
+                                info@enviguide.com
                             </a>
-                        </div>
-
-                        {/* Response Time */}
-                        <div className={styles.infoCard}>
-                            <div className={styles.cardHeader}>
-                                <span className={styles.cardIconWrap}>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                        <path d="M12 6v6l4 2" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </span>
-                                <span className={styles.cardTitle}>Response Times</span>
-                            </div>
-                            <div className={styles.responseList}>
-                                {[
-                                    { label: 'Critical Issues', time: '< 2 hours', dot: '#ef4444' },
-                                    { label: 'General Support', time: '< 24 hours', dot: '#f59e0b' },
-                                    { label: 'Feedback', time: '< 48 hours', dot: '#22c55e' },
-                                ].map(r => (
-                                    <div key={r.label} className={styles.responseRow}>
-                                        <div className={styles.responseRowLeft}>
-                                            <span className={styles.responseDot} style={{ background: r.dot }} />
-                                            <span className={styles.responseLabel}>{r.label}</span>
-                                        </div>
-                                        <span className={styles.responseTime}>{r.time}</span>
-                                    </div>
-                                ))}
-                            </div>
                         </div>
 
                         {/* Quick Links */}
@@ -145,11 +147,16 @@ export default function Support() {
                             <ul className={styles.linksList}>
                                 {[
                                     { icon: 'info', label: 'Frequently Asked Questions' },
+                                    { icon: 'book', label: 'PCF User Manuals', path: '/manuals-pcf' },
                                     { icon: 'users', label: 'Community Guidelines' },
                                     { icon: 'shield', label: 'Privacy Policy' },
-                                ].map(({ icon, label }) => (
+                                ].map(({ icon, label, path }) => (
                                     <li key={label}>
-                                        <a href="#" className={styles.quickLink}>
+                                        <button
+                                            className={styles.quickLink}
+                                            onClick={() => path ? navigate(path) : null}
+                                            style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', padding: '6px 10px' }}
+                                        >
                                             <span className={styles.quickLinkLeft}>
                                                 <QuickIcon type={icon} />
                                                 {label}
@@ -157,7 +164,7 @@ export default function Support() {
                                             <svg className={styles.quickArrow} width="12" height="12" viewBox="0 0 24 24" fill="none">
                                                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
-                                        </a>
+                                        </button>
                                     </li>
                                 ))}
                             </ul>
@@ -241,6 +248,18 @@ export default function Support() {
                                 </div>
 
                                 {/* Submit */}
+                                {errors.submit && (
+                                    <div className={styles.fieldError} style={{
+                                        textAlign: 'center',
+                                        marginBottom: '15px',
+                                        padding: '10px',
+                                        background: '#fef2f2',
+                                        borderRadius: '8px',
+                                        border: '1px solid #fee2e2'
+                                    }}>
+                                        {errors.submit}
+                                    </div>
+                                )}
                                 <button type="submit" className={styles.sendBtn} disabled={sending}>
                                     {sending ? (
                                         <>
@@ -295,6 +314,12 @@ function QuickIcon({ type }) {
     if (type === 'users') return (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
             <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+    if (type === 'book') return (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     )
     return (

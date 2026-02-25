@@ -6,6 +6,8 @@ import HelpCentre from './pages/HelpCentre'
 import SupplierQuestionnaire from './pages/SupplierQuestionnaire'
 import ArticleWhatIsEnviGuide from './pages/ArticleWhatIsEnviGuide'
 import ArticlePlatformWalkthrough from './pages/ArticlePlatformWalkthrough'
+import ManualsPCF from './pages/ManualsPCF'
+import ArticleGetAccess from './pages/ArticleGetAccess'
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
         <Route path="/supplier-questionnaire" element={<SupplierQuestionnaire />} />
         <Route path="/article-what-is-enviguide" element={<ArticleWhatIsEnviGuide />} />
         <Route path="/article-platform-walkthrough" element={<ArticlePlatformWalkthrough />} />
+        <Route path="/manuals-pcf" element={<ManualsPCF />} />
+        <Route path="/article-get-access" element={<ArticleGetAccess />} />
       </Routes>
     </BrowserRouter>
   )
