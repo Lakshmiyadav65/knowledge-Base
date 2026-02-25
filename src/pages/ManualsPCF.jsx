@@ -3,8 +3,8 @@ import styles from './ManualsPCF.module.css'
 
 const MANUALS = [
     { id: 1, title: 'How to Get Access to Enviguide', path: '/article-get-access' },
-    { id: 2, title: 'How to Add a Product to the Product Portfolio' },
-    { id: 3, title: 'How to Create a PCF Request for a product' },
+    { id: 2, title: 'How to Add a Product to the Product Portfolio', path: '/article-add-product' },
+    { id: 3, title: 'How to Create a PCF Request for a product', path: '/article-create-pcf-request' },
     { id: 4, title: 'PCF Request Processing Workflow & Admin Actions' },
     { id: 5, title: 'How to Add Own Emissions (Manufacturer Own Emissions Questionnaire)' },
 ]

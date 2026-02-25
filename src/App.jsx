@@ -8,6 +8,8 @@ import ArticleWhatIsEnviGuide from './pages/ArticleWhatIsEnviGuide'
 import ArticlePlatformWalkthrough from './pages/ArticlePlatformWalkthrough'
 import ManualsPCF from './pages/ManualsPCF'
 import ArticleGetAccess from './pages/ArticleGetAccess'
+import ArticleAddProduct from './pages/ArticleAddProduct'
+import ArticleCreatePCFRequest from './pages/ArticleCreatePCFRequest'
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/article-platform-walkthrough" element={<ArticlePlatformWalkthrough />} />
         <Route path="/manuals-pcf" element={<ManualsPCF />} />
         <Route path="/article-get-access" element={<ArticleGetAccess />} />
+        <Route path="/article-add-product" element={<ArticleAddProduct />} />
+        <Route path="/article-create-pcf-request" element={<ArticleCreatePCFRequest />} />
       </Routes>
     </BrowserRouter>
   )
