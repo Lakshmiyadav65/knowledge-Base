@@ -10,6 +10,8 @@ import ManualsPCF from './pages/ManualsPCF'
 import ArticleGetAccess from './pages/ArticleGetAccess'
 import ArticleAddProduct from './pages/ArticleAddProduct'
 import ArticleCreatePCFRequest from './pages/ArticleCreatePCFRequest'
+import ArticlePCFWorkflow from './pages/ArticlePCFWorkflow'
+import ArticleOwnEmissions from './pages/ArticleOwnEmissions'
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/article-get-access" element={<ArticleGetAccess />} />
         <Route path="/article-add-product" element={<ArticleAddProduct />} />
         <Route path="/article-create-pcf-request" element={<ArticleCreatePCFRequest />} />
+        <Route path="/article-pcf-workflow" element={<ArticlePCFWorkflow />} />
+        <Route path="/article-own-emissions" element={<ArticleOwnEmissions />} />
       </Routes>
     </BrowserRouter>
   )

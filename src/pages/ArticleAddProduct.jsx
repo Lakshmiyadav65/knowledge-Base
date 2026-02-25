@@ -205,7 +205,7 @@ export default function ArticleAddProduct() {
                             </svg>
                             Previous: Getting Access
                         </button>
-                        <button className={styles.footerNavBtnNext} onClick={() => navigate('/manuals-pcf')}>
+                        <button className={styles.footerNavBtnNext} onClick={() => navigate('/article-create-pcf-request')}>
                             Next: Create PCF Request
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
