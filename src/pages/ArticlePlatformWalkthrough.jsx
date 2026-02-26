@@ -87,7 +87,7 @@ export default function ArticlePlatformWalkthrough() {
                             </svg>
                         </div>
                         <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our ESG specialists are ready to guide you.</p>
+                        <p className={styles.helpDesc}>Our specialists are ready to guide you.</p>
                         <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
                     </div>
                 </aside>
@@ -252,7 +252,7 @@ export default function ArticlePlatformWalkthrough() {
                                 { step: 2, title: 'Select the Product', body: 'Choose which product from your Product Portfolio you need emissions data for. You can select multiple products for bulk requests.' },
                                 { step: 3, title: 'Select the Supplier', body: 'Pick the supplier from your registered supplier list. If they\'re new, you can add them directly from this screen.' },
                                 { step: 4, title: 'Set the Reporting Period', body: 'Specify the year or quarter for which you need the emissions data (e.g., Full Year 2025, Q3 2025).' },
-                                { step: 5, title: 'Send the Request', body: 'Click Send Request. The supplier receives a personalized email with a secure link to the Supplier ESG Questionnaire. No account creation required.' },
+                                { step: 5, title: 'Send the Request', body: 'Click Send Request. The supplier receives a personalized email with a secure link to the Supplier Questionnaire. No account creation required.' },
                                 { step: 6, title: 'Track the Status', body: 'Monitor progress in Task Management. Status moves: Draft → Sent → In Progress → Submitted → Under Review → Accepted.' },
                             ].map(s => (
                                 <div key={s.step} className={styles.numberedStep}>
@@ -270,16 +270,16 @@ export default function ArticlePlatformWalkthrough() {
                     <section id="step3-questionnaire" className={styles.section}>
                         <div className={styles.stepHeader}>
                             <span className={styles.stepBadge} style={{ background: 'rgba(168,85,247,0.12)', color: '#7c3aed' }}>STEP 3</span>
-                            <h2 className={styles.sectionTitle}>Supplier Questionnaire — Guided ESG Data Entry</h2>
+                            <h2 className={styles.sectionTitle}>Supplier Questionnaire — Guided Data Entry</h2>
                         </div>
                         <p className={styles.body}>
-                            When a supplier opens the questionnaire link, they land on the <strong>Supplier ESG Questionnaire</strong> —
+                            When a supplier opens the questionnaire link, they land on the <strong>Supplier Questionnaire</strong> —
                             a beautifully guided form broken into 6 sections:
                         </p>
 
                         <div className={styles.sectionGrid}>
                             {[
-                                { num: '01', title: 'Organization Details', desc: 'Legal name, core business activity, NACE/SIC codes, ESG contact details.' },
+                                { num: '01', title: 'Organization Details', desc: 'Legal name, core business activity, NACE/SIC codes, contact details.' },
                                 { num: '02', title: 'Product Details', desc: 'Product name, SKU, category, functional unit, and lifecycle.' },
                                 { num: '03', title: 'Scope 1 — Direct Emissions', desc: 'Fuel combustion, on-site processes, refrigerant leaks from company-controlled sources.' },
                                 { num: '04', title: 'Scope 2 — Energy Emissions', desc: 'Purchased electricity, steam, heat — market-based and location-based accounting.' },

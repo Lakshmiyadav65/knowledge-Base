@@ -93,7 +93,7 @@ const CATEGORIES = [
 const POPULAR_ARTICLES = [
     { tag: 'Getting Started', title: 'What is EnviGuide? — Platform Overview', path: '/article-what-is-enviguide' },
     { tag: 'Getting Started', title: 'How the Platform Works — Step-by-Step Walkthrough', path: '/article-platform-walkthrough' },
-    { tag: 'Supplier Guide', title: 'How to Fill Out a Supplier ESG Questionnaire', path: '/supplier-questionnaire' },
+    { tag: 'Supplier Guide', title: 'How to Fill Out a Supplier Questionnaire', path: '/supplier-questionnaire' },
 ]
 
 const STATS = [

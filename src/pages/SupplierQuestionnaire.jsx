@@ -461,9 +461,9 @@ const QUESTIONS = {
             why: 'Standardized methodologies ensure comparability, transparency, and global alignment.',
         },
         {
-            id: 'q78', num: 'QUESTION 78', title: 'Reporting to ESG Frameworks (CDP, SBTi, etc.)', defaultOpen: false,
-            what: 'Whether your organization reports environmental data to recognized ESG platforms.',
-            why: 'Participation in ESG frameworks indicates commitment to transparency and climate action.',
+            id: 'q78', num: 'QUESTION 78', title: 'Reporting to Frameworks (CDP, SBTi, etc.)', defaultOpen: false,
+            what: 'Whether your organization reports environmental data to recognized platforms.',
+            why: 'Participation in frameworks indicates commitment to transparency and climate action.',
         },
 
         // ── 5.6 Additional Sustainability Notes ──
@@ -588,7 +588,7 @@ export default function SupplierQuestionnaire() {
                             </svg>
                         </div>
                         <h4 className={styles.helpTitle}>Need Help?</h4>
-                        <p className={styles.helpDesc}>Our ESG specialists are available to guide you through complex reporting.</p>
+                        <p className={styles.helpDesc}>Our specialists are available to guide you through complex reporting.</p>
                         <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
                     </div>
                 </aside>
@@ -608,9 +608,9 @@ export default function SupplierQuestionnaire() {
                     {/* Page Title Row */}
                     <div className={styles.titleRow}>
                         <div>
-                            <h1 className={styles.pageTitle}>Supplier ESG Questionnaire</h1>
+                            <h1 className={styles.pageTitle}>Supplier Questionnaire</h1>
                             <p className={styles.pageSub}>
-                                Provide structured environmental, product, and sustainability data to help track and improve our shared ESG impact.
+                                Provide structured environmental, product, and sustainability data to help track and improve our shared impact.
                             </p>
                         </div>
                         <div className={styles.searchBox}>

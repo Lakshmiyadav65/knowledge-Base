@@ -75,7 +75,7 @@ const MODULES = [
         ),
         color: 'rgba(34,197,94,0.10)',
         name: 'Task Management',
-        desc: 'Assign, track, and close ESG data tasks across your team with priority levels and due dates.',
+        desc: 'Assign, track, and close data tasks across your team with priority levels and due dates.',
     },
     {
         icon: (
@@ -138,7 +138,7 @@ export default function ArticleWhatIsEnviGuide() {
                             </svg>
                         </div>
                         <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our ESG specialists are ready to guide you.</p>
+                        <p className={styles.helpDesc}>Our specialists are ready to guide you.</p>
                         <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
                     </div>
                 </aside>
@@ -225,7 +225,7 @@ export default function ArticleWhatIsEnviGuide() {
                         </div>
 
                         <p className={styles.body}>
-                            EnviGuide is used by sustainability managers, ESG teams, procurement departments, and compliance officers
+                            EnviGuide is used by sustainability managers, compliance teams, procurement departments, and compliance officers
                             to build a single, auditable source of truth for their organization's environmental performance.
                         </p>
                     </section>
@@ -245,7 +245,7 @@ export default function ArticleWhatIsEnviGuide() {
                                     desc: 'Monitor live emissions metrics, track progress against reduction targets, and get a consolidated view of your entire product carbon portfolio.',
                                 },
                                 {
-                                    role: 'ESG & Compliance Teams',
+                                    role: 'Compliance Teams',
                                     icon: '📋',
                                     desc: 'Send and receive structured questionnaires, validate supplier data, and generate audit-ready compliance reports aligned with GHG Protocol, ISO 14064, and IFRS S2.',
                                 },
@@ -262,7 +262,7 @@ export default function ArticleWhatIsEnviGuide() {
                                 {
                                     role: 'Suppliers & Partners',
                                     icon: '🤝',
-                                    desc: "Respond to buyer PCF requests through the guided Supplier ESG Questionnaire — no prior knowledge of carbon accounting is required. EnviGuide's built-in guidance makes it easy.",
+                                    desc: "Respond to buyer PCF requests through the guided Supplier Questionnaire — no prior knowledge of carbon accounting is required. EnviGuide's built-in guidance makes it easy.",
                                 },
                                 {
                                     role: 'Executive Leadership',
@@ -369,7 +369,7 @@ export default function ArticleWhatIsEnviGuide() {
                                 {
                                     tag: 'POPULAR',
                                     title: 'How to Fill Out a Supplier Questionnaire',
-                                    desc: 'Detailed guidance for every section and question in the Supplier ESG form.',
+                                    desc: 'Detailed guidance for every section and question in the Supplier form.',
                                     path: '/supplier-questionnaire',
                                     color: '#3b82f6',
                                 },
