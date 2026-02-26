@@ -88,12 +88,23 @@ const CATEGORIES = [
         title: 'PCF Manuals',
         desc: 'Complete step-by-step documentation for Product Carbon Footprint workflows.',
     },
+    {
+        id: 'manufacturer',
+        icon: (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M3 21h18M3 7v14M13 3v18M21 11v10M8 9h2M16 13h2" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: 'Manufacture Own Emission Questionnaire Guidance',
+        desc: 'Comprehensive guidance on completing the manufacturer own emissions reporting questionnaire.',
+    },
 ]
 
 const POPULAR_ARTICLES = [
     { tag: 'Getting Started', title: 'What is EnviGuide? — Platform Overview', path: '/article-what-is-enviguide' },
     { tag: 'Getting Started', title: 'How the Platform Works — Step-by-Step Walkthrough', path: '/article-platform-walkthrough' },
     { tag: 'Supplier Guide', title: 'How to Fill Out a Supplier Questionnaire', path: '/supplier-questionnaire' },
+    { tag: 'Manufacturer Guide', title: 'Manufacture Own Emission Questionnaire Guidance', path: '/manufacturer-questionnaire' },
 ]
 
 const STATS = [
@@ -173,10 +184,11 @@ export default function HelpCentre() {
                             className={styles.categoryCard}
                             onClick={() => {
                                 if (cat.id === 'supplier') navigate('/supplier-questionnaire')
+                                if (cat.id === 'manufacturer') navigate('/manufacturer-questionnaire')
                                 if (cat.id === 'env') navigate('/article-what-is-enviguide')
                                 if (cat.id === 'pcf') navigate('/manuals-pcf')
                             }}
-                            style={{ cursor: (cat.id === 'supplier' || cat.id === 'env' || cat.id === 'pcf') ? 'pointer' : 'default' }}
+                            style={{ cursor: (cat.id === 'supplier' || cat.id === 'manufacturer' || cat.id === 'env' || cat.id === 'pcf') ? 'pointer' : 'default' }}
                         >
                             <div className={styles.catIconWrap}>{cat.icon}</div>
                             <h3 className={styles.catTitle}>{cat.title}</h3>

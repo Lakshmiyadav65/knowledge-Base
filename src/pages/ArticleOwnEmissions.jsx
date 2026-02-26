@@ -185,7 +185,7 @@ export default function ArticleOwnEmissions() {
                             </div>
 
                             <button
-                                onClick={() => navigate('/supplier-questionnaire')}
+                                onClick={() => navigate('/manufacturer-questionnaire')}
                                 className={styles.helpBtn}
                                 style={{
                                     width: 'auto',

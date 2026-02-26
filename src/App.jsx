@@ -13,6 +13,8 @@ import ArticleCreatePCFRequest from './pages/ArticleCreatePCFRequest'
 import ArticlePCFWorkflow from './pages/ArticlePCFWorkflow'
 import ArticleOwnEmissions from './pages/ArticleOwnEmissions'
 
+import ManufacturerQuestionnaire from './pages/ManufacturerQuestionnaire'
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -22,6 +24,7 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/help-centre" element={<HelpCentre />} />
         <Route path="/supplier-questionnaire" element={<SupplierQuestionnaire />} />
+        <Route path="/manufacturer-questionnaire" element={<ManufacturerQuestionnaire />} />
         <Route path="/article-what-is-enviguide" element={<ArticleWhatIsEnviGuide />} />
         <Route path="/article-platform-walkthrough" element={<ArticlePlatformWalkthrough />} />
         <Route path="/manuals-pcf" element={<ManualsPCF />} />
