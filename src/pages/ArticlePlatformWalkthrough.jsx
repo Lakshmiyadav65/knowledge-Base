@@ -78,18 +78,6 @@ export default function ArticlePlatformWalkthrough() {
                             <a key={s.id} href={`#${s.id}`} className={styles.tocLink}>{s.label}</a>
                         ))}
                     </nav>
-
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our specialists are ready to guide you.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
-                    </div>
                 </aside>
 
                 {/* ── Article Content ── */}
@@ -153,8 +141,8 @@ export default function ArticlePlatformWalkthrough() {
                                 { num: '1', label: 'Dashboard', sub: 'Monitor live emissions KPIs', color: '#22c55e' },
                                 { num: '2', label: 'PCF Request', sub: 'Collect supplier data', color: '#3b82f6' },
                                 { num: '3', label: 'Questionnaire', sub: 'Guided data entry', color: '#a855f7' },
-                                { num: '4', label: 'Portfolio', sub: 'Model lifecycle emissions', color: '#f97316' },
-                                { num: '5', label: 'Reports', sub: 'Export & share results', color: '#f59e0b' },
+                                { num: '4', label: 'Portfolio', sub: 'Model lifecycle emissions', color: '#6366f1' },
+                                { num: '5', label: 'Reports', sub: 'Export & share results', color: '#14b8a6' },
                             ].map((step, i, arr) => (
                                 <div key={step.num} className={styles.flowRow}>
                                     <div className={styles.flowStep}>

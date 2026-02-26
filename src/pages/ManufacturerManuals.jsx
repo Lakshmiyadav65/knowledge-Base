@@ -7,30 +7,32 @@ const MANUALS = [
     { id: 3, title: 'How to Create a PCF Request for a product', path: '/article-create-pcf-request' },
     { id: 4, title: 'PCF Request Processing Workflow & Admin Actions', path: '/article-pcf-workflow' },
     { id: 5, title: 'How to Add Own Emissions (Manufacturer Own Emissions Questionnaire)', path: '/article-own-emissions' },
+    { id: 6, title: 'Component Master', path: '/article-component-master' },
+    { id: 7, title: 'Document Master', path: '/article-document-master' },
 ]
 
-export default function ManualsPCF() {
+export default function ManufacturerManuals() {
     const navigate = useNavigate()
 
     return (
         <div className={styles.page}>
             <header className={styles.topBar}>
-                <button className={styles.backBtn} onClick={() => navigate('/help-centre')}>
+                <button className={styles.backBtn} onClick={() => navigate('/manuals-pcf')}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5M5 12l7 7M5 12l7-7" />
                     </svg>
-                    Help Center
+                    Back to Manuals
                 </button>
             </header>
 
             <main className={styles.container}>
                 <section className={styles.hero}>
                     <div className={styles.badge}>
-                        Official Documentation
+                        Manufacturer Documentation
                     </div>
-                    <h1 className={styles.title}>PCF <span>User Manuals</span></h1>
+                    <h1 className={styles.title}>Manufacturer <span>User Manuals</span></h1>
                     <p className={styles.subtitle}>
-                        Master the Product Carbon Footprint workflows with our detailed, step-by-step guidance manuals.
+                        Master the Product Carbon Footprint workflows with our detailed, step-by-step guidance manuals specifically for manufacturers.
                     </p>
                 </section>
 
@@ -58,16 +60,6 @@ export default function ManualsPCF() {
                         </div>
                     ))}
                 </div>
-
-                <section className={styles.ctaSection}>
-                    <h2 className={styles.ctaTitle}>Need more details?</h2>
-                    <p className={styles.ctaText}>
-                        Our sustainability experts are ready to guide you through any complex reporting task.
-                    </p>
-                    <button className={styles.ctaBtn} onClick={() => navigate('/support')}>
-                        Let me know — Contact Support
-                    </button>
-                </section>
             </main>
         </div>
     )

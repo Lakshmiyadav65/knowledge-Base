@@ -23,9 +23,11 @@
 }
 
 .topBar {
-    height: 60px;
+    height: 72px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* Center the back button area */
     padding: 0 40px;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -48,6 +50,9 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    /* Keep it on the side while centering container */
+    left: 40px;
 }
 
 .backBtn:hover {
@@ -60,13 +65,15 @@
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 40px;
+    padding: 60px 40px;
     position: relative;
     z-index: 1;
 }
 
 .hero {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    text-align: center;
+    /* Center headings and subtitle */
 }
 
 .badge {
@@ -102,6 +109,8 @@
     color: #64748b;
     max-width: 520px;
     line-height: 1.6;
+    margin: 0 auto;
+    /* Center the constrained-width block */
 }
 
 .grid {
@@ -132,8 +141,8 @@
 }
 
 .iconBox {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background: #f0fdf4;
     color: #22c55e;
     border-radius: 10px;
@@ -202,6 +211,9 @@
     padding: 40px;
     text-align: center;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ctaTitle {

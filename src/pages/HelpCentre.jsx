@@ -108,10 +108,9 @@ const POPULAR_ARTICLES = [
 ]
 
 const STATS = [
-    { value: '99.9%', label: 'RESOLUTION RATE' },
-    { value: '<2h', label: 'RESPONSE TIME' },
     { value: '500+', label: 'HELP ARTICLES' },
-    { value: '24/7', label: 'LIVE SUPPORT' },
+    { value: '15+', label: 'USER MANUALS' },
+    { value: '100%', label: 'STAKEHOLDER COVERAGE' },
 ]
 
 const POPULAR_SEARCHES = ['API Keys', 'Metric Report', 'Team Roles']
@@ -195,18 +194,6 @@ export default function HelpCentre() {
                             <p className={styles.catDesc}>{cat.desc}</p>
                         </div>
                     ))}
-
-                    {/* Chat with us card */}
-                    <div className={`${styles.categoryCard} ${styles.chatCard}`}>
-                        <div className={styles.chatBadge}>NEED A SPECIALIST?</div>
-                        <h3 className={styles.chatTitle}>Chat with us</h3>
-                        <button className={styles.chatBtn}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            Start Conversation
-                        </button>
-                    </div>
                 </div>
             </section>
 
@@ -253,10 +240,10 @@ export default function HelpCentre() {
 
                         {/* Featured Guide */}
                         <div className={styles.featuredCard}>
-                            <span className={styles.featuredBadge}>FEATURED GUIDE</span>
-                            <h3 className={styles.featuredTitle}>How the EnviGuide Platform Works</h3>
-                            <p className={styles.featuredDesc}>A complete step-by-step walkthrough — Dashboard, PCF Requests, Supplier Questionnaires, and Reports.</p>
-                            <button className={styles.readNowBtn} onClick={() => navigate('/article-platform-walkthrough')}>Read Now</button>
+                            <span className={styles.featuredBadge}>RECOMMENDED MANUALS</span>
+                            <h3 className={styles.featuredTitle}>PCF User Manuals</h3>
+                            <p className={styles.featuredDesc}>Master the Product Carbon Footprint (PCF) workflows with our detailed, step-by-step guidance manuals.</p>
+                            <button className={styles.readNowBtn} onClick={() => navigate('/manuals-pcf')}>Explore Manuals</button>
                         </div>
 
                         {/* Extra insight row */}

@@ -68,19 +68,6 @@ export default function ArticleCreatePCFRequest() {
                             </a>
                         ))}
                     </nav>
-
-                    {/* Need Help */}
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our product team is here to assist you with mapping.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Admin</button>
-                    </div>
                 </aside>
 
                 {/* ── Article Content ── */}
@@ -225,9 +212,9 @@ export default function ArticleCreatePCFRequest() {
                         {/* 2. Priority Level */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#fff7ed', borderRadius: '12px', border: '1px solid #ffedd5' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#ecfdf5', borderRadius: '12px', border: '1px solid #d1fae5' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
                                 <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#111827', margin: 0 }}>2. Priority Level <span style={{ color: '#ef4444' }}>*</span></h3>
@@ -239,7 +226,7 @@ export default function ArticleCreatePCFRequest() {
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '20px' }}>
                                     {[
                                         { label: 'HIGH', time: '10 Days', bg: '#fef2f2', border: '#fee2e2', text: '#991b1b', tag: '#ef4444' },
-                                        { label: 'MEDIUM', time: '21 Days', bg: '#fffbeb', border: '#fef3c7', text: '#92400e', tag: '#f59e0b' },
+                                        { label: 'MEDIUM', time: '21 Days', bg: '#f0fdfa', border: '#ccfbf1', text: '#0d9488', tag: '#14b8a6' },
                                         { label: 'LOW', time: '30 Days', bg: '#f0f9ff', border: '#e0f2fe', text: '#075985', tag: '#3b82f6' }
                                     ].map((p, i) => (
                                         <div key={i} style={{ background: p.bg, border: `1px solid ${p.border}`, borderRadius: '14px', padding: '16px', textAlign: 'center' }}>
@@ -397,9 +384,9 @@ export default function ArticleCreatePCFRequest() {
                         {/* Specifications */}
                         <div style={{ marginTop: '48px', paddingLeft: '8px' }}>
                             <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '12px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#fef3c7', borderRadius: '12px', border: '1px solid #fde68a' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', flexShrink: 0, background: '#ecfdf5', borderRadius: '12px', border: '1px solid #d1fae5' }}>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
                                 <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#111827', margin: 0 }}>7. Product Specifications</h3>

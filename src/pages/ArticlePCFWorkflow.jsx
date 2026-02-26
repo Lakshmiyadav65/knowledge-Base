@@ -66,19 +66,6 @@ export default function ArticlePCFWorkflow() {
                             </a>
                         ))}
                     </nav>
-
-                    {/* Need Help */}
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our product team is here to assist you with mapping.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Admin</button>
-                    </div>
                 </aside>
 
                 {/* ── Article Content ── */}
@@ -209,12 +196,14 @@ export default function ArticlePCFWorkflow() {
                         <p className={styles.body}>Admin team reviews all collected supplier data for accuracy. Ratings are based on:</p>
                         <div className={styles.dqGrid}>
                             <div className={styles.dqCard}>
-                                <p className={styles.dqTitle}>Completeness</p>
-                                <p className={styles.dqText}>Are all required supplier responses received?</p>
+                                <span className={styles.dqEmoji}>📊</span>
+                                <h4 className={styles.dqDimension}>Completeness</h4>
+                                <p className={styles.dqDesc}>Are all required supplier responses received?</p>
                             </div>
                             <div className={styles.dqCard}>
-                                <p className={styles.dqTitle}>Accuracy</p>
-                                <p className={styles.dqText}>Verification of environmental data provided.</p>
+                                <span className={styles.dqEmoji}>🎯</span>
+                                <h4 className={styles.dqDimension}>Accuracy</h4>
+                                <p className={styles.dqDesc}>Verification of environmental data provided.</p>
                             </div>
                         </div>
                     </section>

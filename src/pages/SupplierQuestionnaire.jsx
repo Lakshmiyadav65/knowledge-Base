@@ -578,19 +578,6 @@ export default function SupplierQuestionnaire() {
                             </button>
                         ))}
                     </nav>
-
-                    {/* Need Help Card */}
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <h4 className={styles.helpTitle}>Need Help?</h4>
-                        <p className={styles.helpDesc}>Our specialists are available to guide you through complex reporting.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
-                    </div>
                 </aside>
 
                 {/* ── Main Content ── */}

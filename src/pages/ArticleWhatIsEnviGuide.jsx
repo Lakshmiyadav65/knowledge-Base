@@ -80,10 +80,10 @@ const MODULES = [
     {
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M18 20V10M12 20V4M6 20v-6" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M18 20V10M12 20V4M6 20v-6" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
         ),
-        color: 'rgba(245,158,11,0.10)',
+        color: 'rgba(59,130,246,0.10)',
         name: 'Reports',
         desc: 'Generate audit-ready PDF and CSV reports covering lifecycle emissions, supplier breakdowns, and compliance status.',
     },
@@ -128,19 +128,6 @@ export default function ArticleWhatIsEnviGuide() {
                             </a>
                         ))}
                     </nav>
-
-                    {/* Need Help */}
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <p className={styles.helpTitle}>Need Help?</p>
-                        <p className={styles.helpDesc}>Our specialists are ready to guide you.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
-                    </div>
                 </aside>
 
                 {/* ── Article Content ── */}

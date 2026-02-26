@@ -560,19 +560,6 @@ export default function ManufacturerQuestionnaire() {
                             </button>
                         ))}
                     </nav>
-
-                    {/* Need Help Card */}
-                    <div className={styles.helpCard}>
-                        <div className={styles.helpIconWrap}>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="#22c55e" strokeWidth="2" />
-                                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </div>
-                        <h4 className={styles.helpTitle}>Need Help?</h4>
-                        <p className={styles.helpDesc}>Our specialists are available to guide you through complex reporting.</p>
-                        <button className={styles.helpBtn} onClick={() => navigate('/support')}>Contact Expert</button>
-                    </div>
                 </aside>
 
                 {/* ── Main Content ── */}
@@ -792,36 +779,6 @@ export default function ManufacturerQuestionnaire() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Support & Related Links */}
-                    <div style={{
-                        padding: '40px',
-                        background: 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)',
-                        borderRadius: '28px',
-                        border: '1px solid #dcfce7',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                        marginBottom: '48px'
-                    }}>
-                        <h3 style={{ fontSize: '22px', fontWeight: '900', color: '#111827', marginBottom: '12px' }}>Support & Resources</h3>
-                        <p style={{ color: '#4b5563', maxWidth: '600px', lineHeight: '1.6', marginBottom: '32px', fontSize: '15px' }}>
-                            Need technical help or specific guidance on emission and sustainability standards? Our sustainability specialists are ready to assist.
-                        </p>
-                        <div style={{ display: 'flex', gap: '16px' }}>
-                            <button className={styles.helpBtn} style={{ width: 'auto', padding: '14px 28px' }} onClick={() => navigate('/support')}>
-                                Contact Expert
-                            </button>
-                            <button
-                                className={styles.helpBtn}
-                                style={{ width: 'auto', padding: '14px 28px', background: '#fff', color: '#16a34a', border: '1.5px solid #16a34a' }}
-                                onClick={() => navigate('/supplier-questionnaire')}
-                            >
-                                Supplier Questionnaire Guide
-                            </button>
                         </div>
                     </div>
 
