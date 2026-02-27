@@ -20,6 +20,8 @@ import ArticleDocumentMaster from './pages/ArticleDocumentMaster'
 import ArticleSupplierAccess from './pages/ArticleSupplierAccess'
 import ArticleCreateManufacturer from './pages/ArticleCreateManufacturer'
 import ArticleCreateNewUser from './pages/ArticleCreateNewUser'
+import ArticleManageAuthorizations from './pages/ArticleManageAuthorizations'
+import ArticleAddProduct from './pages/ArticleAddProduct'
 
 import ManufacturerQuestionnaire from './pages/ManufacturerQuestionnaire'
 
@@ -49,6 +51,8 @@ export default function App() {
         <Route path="/article-supplier-access" element={<ArticleSupplierAccess />} />
         <Route path="/admin-article-create-manufacturer" element={<ArticleCreateManufacturer />} />
         <Route path="/admin-article-create-new-user" element={<ArticleCreateNewUser />} />
+        <Route path="/admin-article-manage-authorizations" element={<ArticleManageAuthorizations />} />
+        <Route path="/admin-article-add-product" element={<ArticleAddProduct />} />
       </Routes>
     </BrowserRouter>
   )
