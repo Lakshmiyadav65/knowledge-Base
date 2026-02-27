@@ -1512,6 +1512,73 @@
     flex-shrink: 0;
 }
 
+/* ──/* Manual / Technical Guide Styles */
+.manualGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.manualCard {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.manualCard:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.manualHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.parameterRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px dashed #f3f4f6;
+}
+
+.parameterRow:last-child {
+    border-bottom: none;
+}
+
+.paramLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.paramValue {
+    font-size: 13px;
+    color: #111827;
+    text-align: right;
+    max-width: 60%;
+}
+
+.valueBadge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 /* ── Registration Link Box ── */
 .regLinkBox {
     background: #f8fafc;

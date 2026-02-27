@@ -21,8 +21,10 @@ import ArticleSupplierAccess from './pages/ArticleSupplierAccess'
 import ArticleCreateManufacturer from './pages/ArticleCreateManufacturer'
 import ArticleCreateNewUser from './pages/ArticleCreateNewUser'
 import ArticleManageAuthorizations from './pages/ArticleManageAuthorizations'
-import ArticleAddProduct from './pages/ArticleAddProduct'
 import ArticleAdminPCFWorkflow from './pages/ArticleAdminPCFWorkflow'
+import ArticleDataConfiguration from './pages/ArticleDataConfiguration'
+import ArticleMasterDataSetup from './pages/ArticleMasterDataSetup'
+import ArticleEcoInventFactors from './pages/ArticleEcoInventFactors'
 
 import ManufacturerQuestionnaire from './pages/ManufacturerQuestionnaire'
 
@@ -55,6 +57,9 @@ export default function App() {
         <Route path="/admin-article-manage-authorizations" element={<ArticleManageAuthorizations />} />
         <Route path="/admin-article-add-product" element={<ArticleAddProduct />} />
         <Route path="/admin-article-pcf-workflow" element={<ArticleAdminPCFWorkflow />} />
+        <Route path="/admin-article-data-config" element={<ArticleDataConfiguration />} />
+        <Route path="/admin-article-master-setup" element={<ArticleMasterDataSetup />} />
+        <Route path="/admin-article-ecoinvent" element={<ArticleEcoInventFactors />} />
       </Routes>
     </BrowserRouter>
   )

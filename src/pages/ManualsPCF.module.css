@@ -195,12 +195,14 @@
     justify-content: center;
     color: #94a3b8;
     transition: all 0.3s;
+    opacity: 0;
 }
 
 .card:hover .arrow {
     background: #22c55e;
     color: #fff;
     transform: translateX(4px);
+    opacity: 1;
 }
 
 .ctaSection {
