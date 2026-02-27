@@ -12,7 +12,7 @@ const CHOICES = [
                 <path d="M12 8v4M12 16h.01" />
             </svg>
         ),
-        color: '#3b82f6',
+        color: '#22c55e',
         path: '/manuals-admin'
     },
     {
@@ -36,7 +36,7 @@ const CHOICES = [
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
         ),
-        color: '#10b981',
+        color: '#22c55e',
         path: '/manuals-supplier'
     }
 ]

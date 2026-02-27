@@ -2,10 +2,14 @@ import { useNavigate } from 'react-router-dom'
 import styles from './ManualsPCF.module.css'
 
 const MANUALS = [
-    { id: 1, title: 'Managing User Access and Roles', path: '#' },
-    { id: 2, title: 'Configuring Emission Factors & Databases', path: '#' },
-    { id: 3, title: 'Reviewing and Approving PCF Requests', path: '#' },
-    { id: 4, title: 'Platform Health Monitoring & Reporting', path: '#' },
+    { id: 1, title: 'How to create a Manufacture ?', path: '/admin-article-create-manufacturer' },
+    { id: 2, title: 'How to Create a New User ?', path: '/admin-article-create-new-user' },
+    { id: 3, title: 'Complete Guide to Manage User Authorizations in EnviGuide', path: '#' },
+    { id: 4, title: 'How to Add a Product in EnviGuide', path: '#' },
+    { id: 5, title: 'What a Super Admin must do after a Manufacturer submits a PCF request.', path: '#' },
+    { id: 6, title: 'What is Data Configuration in EnviGuide ?', path: '#' },
+    { id: 7, title: 'What is Master Data Setup in EnviGuide?', path: '#' },
+    { id: 8, title: 'What is EcoInvent Emission Factor in EnviGuide ?', path: '#' },
 ]
 
 export default function AdminManuals() {
@@ -24,7 +28,7 @@ export default function AdminManuals() {
 
             <main className={styles.container}>
                 <section className={styles.hero}>
-                    <div className={styles.badge} style={{ background: '#eff6ff', color: '#1d4ed8', borderColor: '#dbeafe' }}>
+                    <div className={styles.badge} style={{ background: '#ecfdf5', color: '#059669', borderColor: '#d1fae5' }}>
                         Admin Documentation
                     </div>
                     <h1 className={styles.title}>Admin <span>User Manuals</span></h1>
@@ -36,7 +40,7 @@ export default function AdminManuals() {
                 <div className={styles.grid}>
                     {MANUALS.map(manual => (
                         <div key={manual.id} className={styles.card} onClick={() => manual.path !== '#' && navigate(manual.path)}>
-                            <div className={styles.iconBox} style={{ background: '#eff6ff', color: '#3b82f6' }}>
+                            <div className={styles.iconBox} style={{ background: '#ecfdf5', color: '#22c55e' }}>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                                     <path d="M12 8v4M12 16h.01" />
@@ -44,8 +48,8 @@ export default function AdminManuals() {
                             </div>
                             <h2 className={styles.cardHeadline}>{manual.title}</h2>
                             <div className={styles.footer}>
-                                <span className={styles.number}>DOCUMENT #0{manual.id}</span>
-                                <div className={styles.arrow} style={{ background: manual.path === '#' ? '#f1f5f9' : '#3b82f6', color: manual.path === '#' ? '#94a3b8' : '#fff' }}>
+                                <span className={styles.number}>DOCUMENT #{String(manual.id).padStart(2, '0')}</span>
+                                <div className={styles.arrow} style={{ background: manual.path === '#' ? '#f1f5f9' : '#22c55e', color: manual.path === '#' ? '#94a3b8' : '#fff' }}>
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
