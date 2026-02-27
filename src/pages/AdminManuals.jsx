@@ -6,7 +6,7 @@ const MANUALS = [
     { id: 2, title: 'How to Create a New User ?', path: '/admin-article-create-new-user' },
     { id: 3, title: 'Complete Guide to Manage User Authorizations in EnviGuide', path: '/admin-article-manage-authorizations' },
     { id: 4, title: 'How to Add a Product in EnviGuide', path: '/admin-article-add-product' },
-    { id: 5, title: 'What a Super Admin must do after a Manufacturer submits a PCF request.', path: '#' },
+    { id: 5, title: 'What a Super Admin must do after a Manufacturer submits a PCF request.', path: '/admin-article-pcf-workflow' },
     { id: 6, title: 'What is Data Configuration in EnviGuide ?', path: '#' },
     { id: 7, title: 'What is Master Data Setup in EnviGuide?', path: '#' },
     { id: 8, title: 'What is EcoInvent Emission Factor in EnviGuide ?', path: '#' },

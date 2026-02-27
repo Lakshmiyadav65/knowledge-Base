@@ -22,6 +22,7 @@ import ArticleCreateManufacturer from './pages/ArticleCreateManufacturer'
 import ArticleCreateNewUser from './pages/ArticleCreateNewUser'
 import ArticleManageAuthorizations from './pages/ArticleManageAuthorizations'
 import ArticleAddProduct from './pages/ArticleAddProduct'
+import ArticleAdminPCFWorkflow from './pages/ArticleAdminPCFWorkflow'
 
 import ManufacturerQuestionnaire from './pages/ManufacturerQuestionnaire'
 
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/admin-article-create-new-user" element={<ArticleCreateNewUser />} />
         <Route path="/admin-article-manage-authorizations" element={<ArticleManageAuthorizations />} />
         <Route path="/admin-article-add-product" element={<ArticleAddProduct />} />
+        <Route path="/admin-article-pcf-workflow" element={<ArticleAdminPCFWorkflow />} />
       </Routes>
     </BrowserRouter>
   )
