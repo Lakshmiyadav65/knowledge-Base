@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './HelpCentre.module.css'
+import botIcon from '../assets/ai-bot-premium.png'
 
 const CATEGORIES = [
     {
@@ -206,14 +207,8 @@ export default function HelpCentre() {
                     onMouseEnter={() => setIsChatOpen(true)}
                     title="Talk to AI ESG Guide"
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 8V4H8" />
-                        <rect width="16" height="12" x="4" y="8" rx="2" />
-                        <path d="M2 14h2" />
-                        <path d="M20 14h2" />
-                        <path d="M15 13v2" />
-                        <path d="M9 13v2" />
-                    </svg>
+                    <img src={botIcon} alt="AI Bot" className={styles.botIconImg} />
+                    <div className={styles.pingEffect}></div>
                 </div>
             ) : (
                 <div
@@ -221,23 +216,19 @@ export default function HelpCentre() {
                     onMouseLeave={() => { setIsChatOpen(false); setShowRoles(false); }}
                 >
                     {!showRoles ? (
-                        <>
+                        <div className={styles.welcomeView}>
                             <div className={styles.aiIconCircle}>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 8V4H8" />
-                                    <rect width="16" height="12" x="4" y="8" rx="2" />
-                                    <path d="M2 14h2" />
-                                    <path d="M20 14h2" />
-                                    <path d="M15 13v2" />
-                                    <path d="M9 13v2" />
-                                </svg>
+                                <img src={botIcon} alt="AI Bot" className={styles.miniBotIcon} />
                             </div>
-                            <span className={styles.aiBadgeText}>ECO-ASSISTANT</span>
-                            <h3 className={styles.aiMainText}>AI ESG Guide</h3>
-                            <button className={styles.aiStartBtn} onClick={() => setShowRoles(true)}>
-                                Start
-                            </button>
-                        </>
+                            <div className={styles.welcomeContent}>
+                                <span className={styles.aiBadgeText}>ECO-ASSISTANT</span>
+                                <h3 className={styles.aiMainText}>How can I help you today?</h3>
+                                <p className={styles.aiSubText}>I'm your AI ESG Guide, ready to assist with your sustainability journey.</p>
+                                <button className={styles.aiStartBtn} onClick={() => setShowRoles(true)}>
+                                    Start a conversation
+                                </button>
+                            </div>
+                        </div>
                     ) : (
                         <div className={styles.roleSelection}>
                             <button className={styles.backToMain} onClick={() => setShowRoles(false)}>
