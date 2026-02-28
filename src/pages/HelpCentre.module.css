@@ -203,7 +203,7 @@
 .chatTrigger {
     position: fixed;
     right: 32px;
-    top: 110px;
+    top: 320px;
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
@@ -251,7 +251,7 @@
 .floatingAiChat {
     position: fixed;
     right: 24px;
-    top: 100px;
+    top: 310px;
     width: 210px;
     height: 230px;
     background: #fff;
@@ -330,7 +330,7 @@
     border-radius: 20px;
     padding: 24px;
     right: 24px;
-    top: 100px;
+    top: 310px;
 }
 
 .roleSelection {
