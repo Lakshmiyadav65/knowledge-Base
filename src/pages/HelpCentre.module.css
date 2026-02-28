@@ -199,6 +199,201 @@
     gap: 10px;
 }
 
+/* ── AI Floating Chat Widget ── */
+.floatingAiChat {
+    position: fixed;
+    right: 24px;
+    top: 100px;
+    width: 210px;
+    height: 230px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    z-index: 500;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+}
+
+.floatingAiChat:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.aiIconCircle {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 12px rgba(34, 197, 94, 0.2);
+    color: #fff;
+}
+
+.aiBadgeText {
+    font-size: 8px;
+    font-weight: 800;
+    color: #059669;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.aiMainText {
+    font-size: 15px;
+    font-weight: 850;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: -0.015em;
+}
+
+.aiStartBtn {
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.aiStartBtn:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
+}
+
+.floatingAiChat.expanded {
+    width: 290px;
+    height: 380px;
+    border-radius: 20px;
+    padding: 24px;
+    right: 24px;
+    top: 100px;
+}
+
+.roleSelection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+}
+
+.backToMain {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #9ca3af;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.backToMain:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.selectLabel {
+    font-size: 10px;
+    font-weight: 800;
+    color: #059669;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.roleHeader {
+    font-size: 18px;
+    font-weight: 850;
+    color: #0f172a;
+    margin-bottom: 24px;
+}
+
+.roleGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.roleOption {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: #fff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.roleOption:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+    transform: translateX(4px);
+}
+
+.roleIcon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f8fafc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roleOption:hover .roleIcon {
+    background: #fff;
+}
+
+.roleInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.roleName {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.roleDesc {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+.gridWrapper {
+    position: relative;
+    width: 100%;
+}
+
 /* ── Category Grid ── */
 .categoryGrid {
     display: grid;
