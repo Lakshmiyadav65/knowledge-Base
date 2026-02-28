@@ -119,6 +119,7 @@ export default function HelpCentre() {
     const navigate = useNavigate()
     const [search, setSearch] = useState('')
     const [showRoles, setShowRoles] = useState(false)
+    const [isChatOpen, setIsChatOpen] = useState(false)
 
     return (
         <div className={styles.page}>
@@ -199,60 +200,78 @@ export default function HelpCentre() {
             </section>
 
             {/* ── AI Floating Chat Widget ── */}
-            <div className={`${styles.floatingAiChat} ${showRoles ? styles.expanded : ''}`}>
-                {!showRoles ? (
-                    <>
-                        <div className={styles.aiIconCircle}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 8V4H8" />
-                                <rect width="16" height="12" x="4" y="8" rx="2" />
-                                <path d="M2 14h2" />
-                                <path d="M20 14h2" />
-                                <path d="M15 13v2" />
-                                <path d="M9 13v2" />
-                            </svg>
+            {!isChatOpen ? (
+                <button className={styles.chatTrigger} onClick={() => setIsChatOpen(true)} title="Talk to AI ESG Guide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 8V4H8" />
+                        <rect width="16" height="12" x="4" y="8" rx="2" />
+                        <path d="M2 14h2" />
+                        <path d="M20 14h2" />
+                        <path d="M15 13v2" />
+                        <path d="M9 13v2" />
+                    </svg>
+                </button>
+            ) : (
+                <div className={`${styles.floatingAiChat} ${showRoles ? styles.expanded : ''}`}>
+                    <button className={styles.closeChat} onClick={() => { setIsChatOpen(false); setShowRoles(false); }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                        </svg>
+                    </button>
+                    {!showRoles ? (
+                        <>
+                            <div className={styles.aiIconCircle}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 8V4H8" />
+                                    <rect width="16" height="12" x="4" y="8" rx="2" />
+                                    <path d="M2 14h2" />
+                                    <path d="M20 14h2" />
+                                    <path d="M15 13v2" />
+                                    <path d="M9 13v2" />
+                                </svg>
+                            </div>
+                            <span className={styles.aiBadgeText}>ECO-ASSISTANT</span>
+                            <h3 className={styles.aiMainText}>AI ESG Guide</h3>
+                            <button className={styles.aiStartBtn} onClick={() => setShowRoles(true)}>
+                                Start
+                            </button>
+                        </>
+                    ) : (
+                        <div className={styles.roleSelection}>
+                            <button className={styles.backToMain} onClick={() => setShowRoles(false)}>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <span className={styles.selectLabel}>CHOOSE YOUR CONTEXT</span>
+                            <h3 className={styles.roleHeader}>How can we help?</h3>
+                            <div className={styles.roleGrid}>
+                                <button className={styles.roleOption} onClick={() => navigate('/support')}>
+                                    <span className={styles.roleIcon}>🤝</span>
+                                    <div className={styles.roleInfo}>
+                                        <p className={styles.roleName}>Supplier Consultant</p>
+                                        <p className={styles.roleDesc}>Issues with questionnaires</p>
+                                    </div>
+                                </button>
+                                <button className={styles.roleOption} onClick={() => navigate('/support')}>
+                                    <span className={styles.roleIcon}>🏭</span>
+                                    <div className={styles.roleInfo}>
+                                        <p className={styles.roleName}>Manufacturer Consultant</p>
+                                        <p className={styles.roleDesc}>PCF guidance</p>
+                                    </div>
+                                </button>
+                                <button className={styles.roleOption} onClick={() => navigate('/support')}>
+                                    <span className={styles.roleIcon}>👤</span>
+                                    <div className={styles.roleInfo}>
+                                        <p className={styles.roleName}>Own Consultant</p>
+                                        <p className={styles.roleDesc}>Platform help</p>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
-                        <span className={styles.aiBadgeText}>ECO-ASSISTANT</span>
-                        <h3 className={styles.aiMainText}>AI ESG Guide</h3>
-                        <button className={styles.aiStartBtn} onClick={() => setShowRoles(true)}>
-                            Start
-                        </button>
-                    </>
-                ) : (
-                    <div className={styles.roleSelection}>
-                        <button className={styles.backToMain} onClick={() => setShowRoles(false)}>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M15 18l-6-6 6-6" />
-                            </svg>
-                        </button>
-                        <span className={styles.selectLabel}>CHOOSE YOUR CONTEXT</span>
-                        <h3 className={styles.roleHeader}>How can we help?</h3>
-                        <div className={styles.roleGrid}>
-                            <button className={styles.roleOption} onClick={() => navigate('/support')}>
-                                <span className={styles.roleIcon}>🤝</span>
-                                <div className={styles.roleInfo}>
-                                    <p className={styles.roleName}>Supplier Consultant</p>
-                                    <p className={styles.roleDesc}>Issues with questionnaires</p>
-                                </div>
-                            </button>
-                            <button className={styles.roleOption} onClick={() => navigate('/support')}>
-                                <span className={styles.roleIcon}>🏭</span>
-                                <div className={styles.roleInfo}>
-                                    <p className={styles.roleName}>Manufacturer Consultant</p>
-                                    <p className={styles.roleDesc}>PCF guidance</p>
-                                </div>
-                            </button>
-                            <button className={styles.roleOption} onClick={() => navigate('/support')}>
-                                <span className={styles.roleIcon}>👤</span>
-                                <div className={styles.roleInfo}>
-                                    <p className={styles.roleName}>Own Consultant</p>
-                                    <p className={styles.roleDesc}>Platform help</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </div>
+                    )}
+                </div>
+            )}
 
             {/* ── Popular Articles + Fresh Insights ── */}
             <section className={styles.section}>
