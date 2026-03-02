@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './HelpCentre.module.css'
 
@@ -115,11 +115,79 @@ const STATS = [
 
 const POPULAR_SEARCHES = ['API Keys', 'Metric Report', 'Team Roles']
 
+const MANUALS_ADMIN = [
+    { title: 'How to create a Manufacture ?', path: '/admin-article-create-manufacturer', type: 'Admin Manual' },
+    { title: 'How to Create a New User ?', path: '/admin-article-create-new-user', type: 'Admin Manual' },
+    { title: 'Complete Guide to Manage User Authorizations in EnviGuide', path: '/admin-article-manage-authorizations', type: 'Admin Manual' },
+    { title: 'How to Add a Product in EnviGuide', path: '/admin-article-add-product', type: 'Admin Manual' },
+    { title: 'What a Super Admin must do after a Manufacturer submits a PCF request.', path: '/admin-article-pcf-workflow', type: 'Admin Manual' },
+    { title: 'What is Data Configuration in EnviGuide ?', path: '/admin-article-data-config', type: 'Admin Manual' },
+    { title: 'What is Master Data Setup in EnviGuide?', path: '/admin-article-master-setup', type: 'Admin Manual' },
+    { title: 'What is EcoInvent Emission Factor in EnviGuide ?', path: '/admin-article-ecoinvent', type: 'Admin Manual' },
+]
+
+const MANUALS_MANUFACTURER = [
+    { title: 'How to Get Access to Enviguide', path: '/article-get-access', type: 'Manufacturer Manual' },
+    { title: 'How to Add a Product to the Product Portfolio', path: '/article-add-product', type: 'Manufacturer Manual' },
+    { title: 'How to Create a PCF Request for a product', path: '/article-create-pcf-request', type: 'Manufacturer Manual' },
+    { title: 'PCF Request Processing Workflow & Admin Actions', path: '/article-pcf-workflow', type: 'Manufacturer Manual' },
+    { title: 'How to Add Own Emissions (Manufacturer Own Emissions Questionnaire)', path: '/article-own-emissions', type: 'Manufacturer Manual' },
+    { title: 'Component Master', path: '/article-component-master', type: 'Manufacturer Manual' },
+    { title: 'Document Master', path: '/article-document-master', type: 'Manufacturer Manual' },
+]
+
+const MANUALS_SUPPLIER = [
+    { title: 'How to get access for the Supplier Questionnaire', path: '/article-supplier-access', type: 'Supplier Manual' },
+    { title: 'Supplier Questionnaire Guidance', path: '/supplier-questionnaire', type: 'Supplier Manual' },
+]
+
+const ALL_SEARCHABLE = [
+    ...POPULAR_ARTICLES.map(a => ({ title: a.title, path: a.path, type: a.tag })),
+    ...CATEGORIES.map(c => ({ title: c.title, path: c.id === 'supplier' ? '/supplier-questionnaire' : c.id === 'manufacturer' ? '/manufacturer-questionnaire' : c.id === 'env' ? '/article-what-is-enviguide' : c.id === 'pcf' ? '/manuals-pcf' : '#', type: 'Category' })),
+    ...MANUALS_ADMIN,
+    ...MANUALS_MANUFACTURER,
+    ...MANUALS_SUPPLIER,
+]
+
 export default function HelpCentre() {
     const navigate = useNavigate()
+    const searchRef = useRef(null)
     const [search, setSearch] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+    const [showResults, setShowResults] = useState(false)
     const [showRoles, setShowRoles] = useState(false)
     const [isChatOpen, setIsChatOpen] = useState(false)
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setShowResults(false)
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => document.removeEventListener('mousedown', handleClickOutside)
+    }, [])
+
+    const handleSearch = (query) => {
+        setSearch(query)
+        if (query.trim().length > 1) {
+            const filtered = ALL_SEARCHABLE.filter(item =>
+                item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.type.toLowerCase().includes(query.toLowerCase())
+            ).slice(0, 6)
+            setSearchResults(filtered)
+            setShowResults(true)
+        } else {
+            setSearchResults([])
+            setShowResults(false)
+        }
+    }
+
+    const onSearchClick = () => {
+        if (searchResults.length > 0) {
+            navigate(searchResults[0].path)
+        }
+    }
 
     return (
         <div className={styles.page}>
@@ -141,24 +209,57 @@ export default function HelpCentre() {
                     <em className={styles.heroAccent}>sustain</em> more?
                 </h1>
 
-                <div className={styles.searchBox}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <circle cx="11" cy="11" r="8" stroke="#9ca3af" strokeWidth="2" />
-                        <path d="M21 21l-4.35-4.35" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                    <input
-                        className={styles.searchInput}
-                        placeholder="Search for articles, sustainability guides, or API docs..."
-                        value={search}
-                        onChange={e => setSearch(e.target.value)}
-                    />
-                    <button className={styles.searchBtn}>Search</button>
+                <div ref={searchRef} className={styles.searchWrapper}>
+                    <div className={styles.searchBox}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="8" stroke="#9ca3af" strokeWidth="2" />
+                            <path d="M21 21l-4.35-4.35" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                        <input
+                            className={styles.searchInput}
+                            placeholder="Search for articles, sustainability guides, or API docs..."
+                            value={search}
+                            onChange={e => handleSearch(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && onSearchClick()}
+                        />
+                        <button className={styles.searchBtn} onClick={onSearchClick}>Search</button>
+                    </div>
+
+                    {showResults && (
+                        <div className={styles.searchResults}>
+                            {searchResults.length > 0 ? (
+                                searchResults.map((result, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={styles.searchResultItem}
+                                        onClick={() => navigate(result.path)}
+                                    >
+                                        <div className={styles.resultInfo}>
+                                            <span className={styles.resultType}>{result.type}</span>
+                                            <p className={styles.resultTitle}>{result.title}</p>
+                                        </div>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </div>
+                                ))
+                            ) : (
+                                <div className={styles.noResults}>No matches found. Try again.</div>
+                            )}
+                        </div>
+                    )}
                 </div>
 
                 <div className={styles.popularRow}>
                     <span className={styles.popularLabel}>POPULAR</span>
                     {POPULAR_SEARCHES.map(s => (
-                        <button key={s} className={styles.popularChip}>{s}</button>
+                        <button
+                            key={s}
+                            className={styles.popularChip}
+                            onClick={() => handleSearch(s)}
+                        >
+                            {s}
+                        </button>
                     ))}
                 </div>
             </section>
