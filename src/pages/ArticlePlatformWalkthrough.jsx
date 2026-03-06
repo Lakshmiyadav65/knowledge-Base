@@ -15,12 +15,12 @@ const SECTIONS = [
 
 const FAQS = [
     {
-        q: 'Do suppliers need an EnviGuide account to fill out the questionnaire?',
-        a: 'No. Suppliers receive a secure link via email and can fill out the questionnaire without creating an account. Their responses are automatically captured in your EnviGuide workspace.',
+        q: 'Do suppliers need an Enviguide account to fill out the questionnaire?',
+        a: 'No. Suppliers receive a secure link via email and can fill out the questionnaire without creating an account. Their responses are automatically captured in your Enviguide workspace.',
     },
     {
-        q: 'What emission standards does EnviGuide follow?',
-        a: 'EnviGuide is aligned with the GHG Protocol Corporate Standard, ISO 14064-1, and IFRS S2 (Climate-related Disclosures). Scope 1, 2, and 3 definitions follow the GHG Protocol categorization.',
+        q: 'What emission standards does Enviguide follow?',
+        a: 'Enviguide is aligned with the GHG Protocol Corporate Standard, ISO 14064-1, and IFRS S2 (Climate-related Disclosures). Scope 1, 2, and 3 definitions follow the GHG Protocol categorization.',
     },
     {
         q: 'Can I track multiple products across multiple clients?',
@@ -101,7 +101,7 @@ export default function ArticlePlatformWalkthrough() {
                         <span className={styles.articleTag}>GETTING STARTED</span>
                         <h1 className={styles.articleTitle}>How the Platform Works</h1>
                         <p className={styles.articleSubtitle}>
-                            A step-by-step walkthrough of every key module in EnviGuide — from the live emissions
+                            A step-by-step walkthrough of every key module in Enviguide — from the live emissions
                             Dashboard to sending PCF Requests, collecting supplier data, and generating compliance-ready reports.
                         </p>
                         <div className={styles.articleMeta}>
@@ -131,7 +131,7 @@ export default function ArticlePlatformWalkthrough() {
                     <section id="how-it-flows" className={styles.section}>
                         <h2 className={styles.sectionTitle}>How It All Flows</h2>
                         <p className={styles.body}>
-                            EnviGuide follows a logical five-step workflow that takes your organization from <strong>setting up
+                            Enviguide follows a logical five-step workflow that takes your organization from <strong>setting up
                                 your product data</strong> all the way to <strong>publishing compliance-ready sustainability reports</strong>.
                         </p>
 
@@ -171,7 +171,7 @@ export default function ArticlePlatformWalkthrough() {
                             <h2 className={styles.sectionTitle}>Dashboard — Your Live Emissions Command Center</h2>
                         </div>
                         <p className={styles.body}>
-                            When you log in to EnviGuide, the <strong>Dashboard</strong> is the first thing you see. It gives you an
+                            When you log in to Enviguide, the <strong>Dashboard</strong> is the first thing you see. It gives you an
                             instant, real-time view of your organization's environmental performance across four key metrics:
                         </p>
 
@@ -429,7 +429,7 @@ export default function ArticlePlatformWalkthrough() {
                         <div>
                             <span className={styles.guidanceLabel}>Guidance Notes</span>
                             <p className={styles.guidanceText}>
-                                This article reflects the current EnviGuide platform and is updated quarterly. Feature availability
+                                This article reflects the current Enviguide platform and is updated quarterly. Feature availability
                                 may vary by subscription tier. For enterprise features, contact your account manager. Last updated: February 2026.
                             </p>
                         </div>
@@ -441,7 +441,7 @@ export default function ArticlePlatformWalkthrough() {
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                                 <path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            What is EnviGuide?
+                            What is Enviguide?
                         </button>
                         <button className={styles.footerNavBtnNext} onClick={() => navigate('/supplier-questionnaire')}>
                             Supplier Questionnaire Guide

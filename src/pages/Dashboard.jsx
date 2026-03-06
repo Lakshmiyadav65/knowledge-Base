@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import styles from './Dashboard.module.css'
 
@@ -121,7 +120,6 @@ function KpiCard({ kpi }) {
 }
 
 export default function Dashboard() {
-    const navigate = useNavigate()
     const [exportDone, setExportDone] = useState(false)
     const [searchVal, setSearchVal] = useState('')
 

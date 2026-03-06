@@ -91,7 +91,7 @@ export default function ArticleComponentMaster() {
                         <span className={styles.articleTag}>USER GUIDE</span>
                         <h1 className={styles.articleTitle}>Component Master</h1>
                         <p className={styles.articleSubtitle}>
-                            A beginner's guide to understanding and using the Component Master "Warehouse" in EnviGuide.
+                            A beginner's guide to understanding and using the Component Master "Warehouse" in Enviguide.
                         </p>
                     </header>
 
@@ -131,7 +131,7 @@ export default function ArticleComponentMaster() {
                             <div className={styles.numberedStep}>
                                 <div className={styles.stepCircle}>1</div>
                                 <div className={styles.stepBody}>
-                                    <div className={styles.stepTitle}>Open EnviGuide</div>
+                                    <div className={styles.stepTitle}>Open Enviguide</div>
                                     <p>Login to your account to see the main dashboard.</p>
                                 </div>
                             </div>

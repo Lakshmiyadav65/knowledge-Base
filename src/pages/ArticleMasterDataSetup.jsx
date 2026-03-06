@@ -80,9 +80,9 @@ export default function ArticleMasterDataSetup() {
 
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag}>ADMIN MANUALS · DOCUMENT #07</span>
-                        <h1 className={styles.articleTitle}>What is Master Data Setup in EnviGuide?</h1>
+                        <h1 className={styles.articleTitle}>What is Master Data Setup in Enviguide?</h1>
                         <p className={styles.articleSubtitle}>
-                            The <strong>reference data layer</strong> of EnviGuide used to standardize all lookups (materials, energy, transport, water/waste, units, standards, life cycle, geography/time, organization).
+                            The <strong>reference data layer</strong> of Enviguide used to standardize all lookups (materials, energy, transport, water/waste, units, standards, life cycle, geography/time, organization).
                         </p>
                         <p className={styles.body} style={{ marginTop: '15px' }}>
                             It ensures every product and process uses the same controlled lists so calculations and reports are consistent, auditable, and reusable across the system.

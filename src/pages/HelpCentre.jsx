@@ -101,7 +101,7 @@ const CATEGORIES = [
 ]
 
 const POPULAR_ARTICLES = [
-    { tag: 'Getting Started', title: 'What is EnviGuide? — Platform Overview', path: '/article-what-is-enviguide' },
+    { tag: 'Getting Started', title: 'What is Enviguide? — Platform Overview', path: '/article-what-is-enviguide' },
     { tag: 'Getting Started', title: 'How the Platform Works — Step-by-Step Walkthrough', path: '/article-platform-walkthrough' },
     { tag: 'Supplier Guide', title: 'How to Fill Out a Supplier Questionnaire', path: '/supplier-questionnaire' },
     { tag: 'Manufacturer Guide', title: 'Manufacture Own Emission Questionnaire Guidance', path: '/manufacturer-questionnaire' },
@@ -118,12 +118,12 @@ const POPULAR_SEARCHES = ['API Keys', 'Metric Report', 'Team Roles']
 const MANUALS_ADMIN = [
     { title: 'How to create a Manufacture ?', path: '/admin-article-create-manufacturer', type: 'Admin Manual' },
     { title: 'How to Create a New User ?', path: '/admin-article-create-new-user', type: 'Admin Manual' },
-    { title: 'Complete Guide to Manage User Authorizations in EnviGuide', path: '/admin-article-manage-authorizations', type: 'Admin Manual' },
-    { title: 'How to Add a Product in EnviGuide', path: '/admin-article-add-product', type: 'Admin Manual' },
+    { title: 'Complete Guide to Manage User Authorizations in Enviguide', path: '/admin-article-manage-authorizations', type: 'Admin Manual' },
+    { title: 'How to Add a Product in Enviguide', path: '/admin-article-add-product', type: 'Admin Manual' },
     { title: 'What a Super Admin must do after a Manufacturer submits a PCF request.', path: '/admin-article-pcf-workflow', type: 'Admin Manual' },
-    { title: 'What is Data Configuration in EnviGuide ?', path: '/admin-article-data-config', type: 'Admin Manual' },
-    { title: 'What is Master Data Setup in EnviGuide?', path: '/admin-article-master-setup', type: 'Admin Manual' },
-    { title: 'What is EcoInvent Emission Factor in EnviGuide ?', path: '/admin-article-ecoinvent', type: 'Admin Manual' },
+    { title: 'What is Data Configuration in Enviguide ?', path: '/admin-article-data-config', type: 'Admin Manual' },
+    { title: 'What is Master Data Setup in Enviguide?', path: '/admin-article-master-setup', type: 'Admin Manual' },
+    { title: 'What is EcoInvent Emission Factor in Enviguide ?', path: '/admin-article-ecoinvent', type: 'Admin Manual' },
 ]
 
 const MANUALS_MANUFACTURER = [

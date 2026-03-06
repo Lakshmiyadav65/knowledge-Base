@@ -190,7 +190,7 @@ export default function ArticleSupplierAccess() {
                                 <div className={styles.stepCircle}>1</div>
                                 <div className={styles.stepBody}>
                                     <div className={styles.stepTitle}>Receive Email Notification</div>
-                                    <p>Check your inbox for the official EnviGuide questionnaire request.</p>
+                                    <p>Check your inbox for the official Enviguide questionnaire request.</p>
                                 </div>
                             </div>
                             <div className={styles.numberedStep}>

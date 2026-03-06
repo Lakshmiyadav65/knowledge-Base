@@ -91,7 +91,7 @@ export default function ArticleCreateManufacturer() {
                         <span className={styles.articleTag}>ADMIN MANUALS · DOCUMENT #01</span>
                         <h1 className={styles.articleTitle}>How to Create a Manufacturer?</h1>
                         <p className={styles.articleSubtitle}>
-                            A complete guide for Super Admins on how to add a new manufacturer to the EnviGuide platform.
+                            A complete guide for Super Admins on how to add a new manufacturer to the Enviguide platform.
                             Follow the step-by-step instructions below.
                         </p>
                         <div className={styles.articleMeta}>
@@ -113,10 +113,10 @@ export default function ArticleCreateManufacturer() {
 
                     {/* ── Overview ── */}
                     <section id="overview" className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Complete Guide to Create a Manufacturer in EnviGuide</h2>
+                        <h2 className={styles.sectionTitle}>Complete Guide to Create a Manufacturer in Enviguide</h2>
                         <p className={styles.body}>
                             This comprehensive guide will help you understand how to add a new manufacturer to the
-                            EnviGuide platform as a Super Admin. Follow the step-by-step instructions below.
+                            Enviguide platform as a Super Admin. Follow the step-by-step instructions below.
                         </p>
                         <div className={styles.calloutGreen}>
                             <div className={styles.calloutIcon}>
@@ -128,7 +128,7 @@ export default function ArticleCreateManufacturer() {
                             <div>
                                 <p className={styles.calloutTitle}>Super Admin Access Required</p>
                                 <p className={styles.calloutText}>
-                                    Only users with the <strong>Super Admin</strong> role can create manufacturers in EnviGuide.
+                                    Only users with the <strong>Super Admin</strong> role can create manufacturers in Enviguide.
                                     Make sure you are logged in with Super Admin credentials before following this guide.
                                 </p>
                             </div>
@@ -149,7 +149,7 @@ export default function ArticleCreateManufacturer() {
                                 <div className={styles.numberedStep}>
                                     <div className={styles.stepCircle}>1</div>
                                     <div className={styles.stepContent}>
-                                        <p className={styles.stepTitle}>Log in to your EnviGuide dashboard as a <strong>Super Admin</strong></p>
+                                        <p className={styles.stepTitle}>Log in to your Enviguide dashboard as a <strong>Super Admin</strong></p>
                                     </div>
                                 </div>
                                 <div className={styles.numberedStep}>
@@ -170,7 +170,7 @@ export default function ArticleCreateManufacturer() {
                             <div className={styles.imageContainer}>
                                 <img
                                     src="/admin-create-mfr-step1-settings.png"
-                                    alt="EnviGuide Dashboard — Settings in left sidebar"
+                                    alt="Enviguide Dashboard — Settings in left sidebar"
                                     className={styles.articleImage}
                                 />
                                 <p className={styles.imageCaption}>STEP 1 — SETTINGS IN THE LEFT SIDEBAR</p>
@@ -219,7 +219,7 @@ export default function ArticleCreateManufacturer() {
                                 <div className={styles.tabPill}>
                                     <span>👥</span>
                                     <div>
-                                        <p className={styles.tabPillName}>EnviGuide Team</p>
+                                        <p className={styles.tabPillName}>Enviguide Team</p>
                                         <p className={styles.tabPillDesc}>For team members</p>
                                     </div>
                                 </div>
@@ -350,7 +350,7 @@ export default function ArticleCreateManufacturer() {
                             {/* Registration Link Box */}
                             <div className={styles.regLinkBox}>
                                 <p className={styles.regLinkLabel}>PUBLIC REGISTRATION LINK</p>
-                                <p className={styles.regLinkUrl}>https://enviguide.nextechltd.in/manufacturer-onboarding</p>
+                                <p className={styles.regLinkUrl}>https://Enviguide.nextechltd.in/manufacturer-onboarding</p>
                                 <p className={styles.regLinkNote}>This link can be reused multiple times for different manufacturers.</p>
                             </div>
 

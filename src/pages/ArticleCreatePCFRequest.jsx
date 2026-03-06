@@ -92,7 +92,7 @@ export default function ArticleCreatePCFRequest() {
                         <h1 className={styles.articleTitle}>How to Create a PCF Request for a product</h1>
                         <p className={styles.articleSubtitle}>
                             This guide provides step-by-step instructions on how to create a Product Carbon Footprint (PCF) Request
-                            in the EnviGuide Management Suite.
+                            in the Enviguide Management Suite.
                         </p>
                         <div className={styles.articleMeta}>
                             <span className={styles.metaItem}>
@@ -116,7 +116,7 @@ export default function ArticleCreatePCFRequest() {
                             <div className={styles.numberedStep}>
                                 <div className={styles.stepCircle}>1</div>
                                 <div className={styles.stepContent}>
-                                    <p className={styles.stepBody}>Log in to your EnviGuide Management Suite account with your credentials</p>
+                                    <p className={styles.stepBody}>Log in to your Enviguide Management Suite account with your credentials</p>
                                 </div>
                             </div>
                             <div className={styles.numberedStep}>
@@ -422,7 +422,7 @@ export default function ArticleCreatePCFRequest() {
                                 <div style={{ marginTop: '32px', background: '#f8fafc', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
                                     <h4 style={{ fontSize: '16px', fontWeight: '800', color: '#111827', margin: '0 0 12px' }}>CSV Column Mapping</h4>
                                     <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: '1.6', marginBottom: '20px' }}>
-                                        After uploading, match your file columns to EnviGuide data fields. Required fields must be mapped to proceed.
+                                        After uploading, match your file columns to Enviguide data fields. Required fields must be mapped to proceed.
                                     </p>
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                                         <div className={styles.imageContainer} style={{ margin: '0', background: '#fff' }}>

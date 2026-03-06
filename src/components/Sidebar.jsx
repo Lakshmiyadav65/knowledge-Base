@@ -98,7 +98,7 @@ export default function Sidebar() {
                     </svg>
                 </div>
                 <div className={styles.logoText}>
-                    <span className={styles.logoName}>EnviGuide</span>
+                    <span className={styles.logoName}>Enviguide</span>
                     <span className={styles.logoSub}>MANAGEMENT SUITE</span>
                 </div>
             </div>
@@ -127,7 +127,7 @@ export default function Sidebar() {
                 </div>
                 <div className={styles.knowledgeContent}>
                     <p className={styles.knowledgeTitle}>Knowledge Base</p>
-                    <p className={styles.knowledgeDesc}>Unlock the full potential of EnviGuide with our expert-led documentation.</p>
+                    <p className={styles.knowledgeDesc}>Unlock the full potential of Enviguide with our expert-led documentation.</p>
                     <button className={styles.knowledgeLink} onClick={() => navigate('/help-centre')}>Browse Guides →</button>
                 </div>
             </div>

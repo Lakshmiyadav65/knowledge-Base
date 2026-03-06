@@ -77,9 +77,9 @@ export default function ArticleEcoInventFactors() {
 
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag} style={{ background: '#fef3c7', color: '#92400e' }}>TECHNICAL MANUAL · DOCUMENT #08</span>
-                        <h1 className={styles.articleTitle}>What is EcoInvent Emission Factor in EnviGuide?</h1>
+                        <h1 className={styles.articleTitle}>What is EcoInvent Emission Factor in Enviguide?</h1>
                         <p className={styles.articleSubtitle}>
-                            Learn how EnviGuide converts activity data into emissions using the world-class EcoInvent life cycle database.
+                            Learn how Enviguide converts activity data into emissions using the world-class EcoInvent life cycle database.
                         </p>
                     </div>
 
@@ -87,7 +87,7 @@ export default function ArticleEcoInventFactors() {
                     <section id="overview" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Overview</h2>
                         <p className={styles.body}>
-                            An EcoInvent emission factor in EnviGuide tells you how much greenhouse gas (typically in <strong>kg CO₂e</strong>) is emitted per unit of a specific activity or material.
+                            An EcoInvent emission factor in Enviguide tells you how much greenhouse gas (typically in <strong>kg CO₂e</strong>) is emitted per unit of a specific activity or material.
                         </p>
                         <p className={styles.body}>
                             Each of the six sections in your settings (Materials, Electricity, Fuel, Packaging, Vehicles, Waste) lets you configure those factors so the system can convert activity data (like kg of steel or kWh of power) into emissions for product carbon footprints and reports.
@@ -97,7 +97,7 @@ export default function ArticleEcoInventFactors() {
                     {/* Common Columns */}
                     <section id="common" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Common columns across all factors</h2>
-                        <p className={styles.body}>Most EcoInvent factor tables in EnviGuide share a core set of columns to ensure transparency and traceability.</p>
+                        <p className={styles.body}>Most EcoInvent factor tables in Enviguide share a core set of columns to ensure transparency and traceability.</p>
 
                         <div className={styles.articleTable}>
                             <table>

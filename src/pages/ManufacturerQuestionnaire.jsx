@@ -79,7 +79,7 @@ const QUESTIONS = {
         {
             id: 'q10', num: 'QUESTION 10', title: 'Existing Product Carbon Footprint (PCF)?', defaultOpen: true,
             what: 'Whether a PCF study was completed for the product(s) in the last 12 months. (If YES → Q11 & Q12 appear).',
-            why: 'Determines if product-level emissions are pre-calculated or require fresh analysis in EnviGuide.',
+            why: 'Determines if product-level emissions are pre-calculated or require fresh analysis in Enviguide.',
         },
         {
             id: 'q11', num: 'QUESTION 11', title: 'Methodology Used', defaultOpen: false,

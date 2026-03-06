@@ -113,7 +113,7 @@ export default function ArticleAddProduct() {
                     {/* Header */}
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag}>ADMIN MANUALS · DOCUMENT #04</span>
-                        <h1 className={styles.articleTitle}>How to Add a Product in EnviGuide</h1>
+                        <h1 className={styles.articleTitle}>How to Add a Product in Enviguide</h1>
                         <p className={styles.articleSubtitle}>
                             A step-by-step guide for Super Admins on how to add a new product and make it
                             visible in the assigned Manufacturer account.
@@ -202,13 +202,13 @@ export default function ArticleAddProduct() {
                     <section id="step1" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Step 1: Login as Super Admin</h2>
                         <div className={styles.numberedSteps}>
-                            <div className={styles.numberedStep}><div className={styles.stepCircle}>1</div><div className={styles.stepContent}><p className={styles.stepTitle}>Open the EnviGuide platform in your web browser</p></div></div>
+                            <div className={styles.numberedStep}><div className={styles.stepCircle}>1</div><div className={styles.stepContent}><p className={styles.stepTitle}>Open the Enviguide platform in your web browser</p></div></div>
                             <div className={styles.numberedStep}><div className={styles.stepCircle}>2</div><div className={styles.stepContent}><p className={styles.stepTitle}>Enter your <strong>Super Admin</strong> credentials</p></div></div>
                             <div className={styles.numberedStep}><div className={styles.stepCircle}>3</div><div className={styles.stepContent}><p className={styles.stepTitle}>Click <strong>Login</strong></p></div></div>
                             <div className={styles.numberedStep}><div className={styles.stepCircle}>4</div><div className={styles.stepContent}><p className={styles.stepTitle}>You will land on the <strong>Dashboard</strong></p></div></div>
                         </div>
                         <div className={styles.imageContainer}>
-                            <img src="/admin-add-product-step1-dashboard.png" alt="EnviGuide dashboard after Super Admin login" className={styles.articleImage} />
+                            <img src="/admin-add-product-step1-dashboard.png" alt="Enviguide dashboard after Super Admin login" className={styles.articleImage} />
                             <p className={styles.imageCaption}>STEP 1 — SUPER ADMIN DASHBOARD</p>
                         </div>
                     </section>

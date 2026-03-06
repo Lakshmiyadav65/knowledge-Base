@@ -179,7 +179,7 @@ export default function ArticlePCFWorkflow() {
                                 <p className={styles.roleEmoji}>📊</p>
                                 <div>
                                     <p className={styles.roleName}>Data Collection</p>
-                                    <p className={styles.roleDesc}>Suppliers submit technical environmental data back to EnviGuide for their specific components.</p>
+                                    <p className={styles.roleDesc}>Suppliers submit technical environmental data back to Enviguide for their specific components.</p>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@ export default function ArticlePCFWorkflow() {
                     <section id="calculation" className={styles.section}>
                         <h2 className={styles.sectionTitle}>PCF Calculation</h2>
                         <p className={styles.body}>
-                            Once quality-checked, the EnviGuide engine computes total carbon footprint values (e.g., cradle‑to‑gate).
+                            Once quality-checked, the Enviguide engine computes total carbon footprint values (e.g., cradle‑to‑gate).
                             Results are linked back to your tracking number and become available for review.
                         </p>
                     </section>

@@ -83,7 +83,7 @@ export default function ArticleDataConfiguration() {
 
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag}>ADMIN MANUALS · DOCUMENT #06</span>
-                        <h1 className={styles.articleTitle}>What is Data Configuration in EnviGuide?</h1>
+                        <h1 className={styles.articleTitle}>What is Data Configuration in Enviguide?</h1>
                         <p className={styles.articleSubtitle}>
                             Understanding the structural foundation that governs how the platform models products,
                             components, manufacturing logic, and organizational responsibility.
@@ -96,7 +96,7 @@ export default function ArticleDataConfiguration() {
                     <section id="overview" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Overview</h2>
                         <p className={styles.body}>
-                            Data Configuration is the architectural foundation of EnviGuide. Before any PCF request is initiated or emissions calculated,
+                            Data Configuration is the architectural foundation of Enviguide. Before any PCF request is initiated or emissions calculated,
                             the system must know how your real-world ecosystem is structured.
                         </p>
                         <div className={styles.calloutBlue}>

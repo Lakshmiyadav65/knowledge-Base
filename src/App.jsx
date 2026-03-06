@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard'
 import Support from './pages/Support'
 import HelpCentre from './pages/HelpCentre'
 import SupplierQuestionnaire from './pages/SupplierQuestionnaire'
-import ArticleWhatIsEnviGuide from './pages/ArticleWhatIsEnviGuide'
+import ArticleWhatIsEnviguide from './pages/ArticleWhatIsEnviguide'
 import ArticlePlatformWalkthrough from './pages/ArticlePlatformWalkthrough'
 import ManualsChoice from './pages/ManualsChoice'
 import AdminManuals from './pages/AdminManuals'
@@ -38,7 +38,7 @@ export default function App() {
         <Route path="/help-centre" element={<HelpCentre />} />
         <Route path="/supplier-questionnaire" element={<SupplierQuestionnaire />} />
         <Route path="/manufacturer-questionnaire" element={<ManufacturerQuestionnaire />} />
-        <Route path="/article-what-is-enviguide" element={<ArticleWhatIsEnviGuide />} />
+        <Route path="/article-what-is-enviguide" element={<ArticleWhatIsEnviguide />} />
         <Route path="/article-platform-walkthrough" element={<ArticlePlatformWalkthrough />} />
         <Route path="/manuals-pcf" element={<ManualsChoice />} />
         <Route path="/manuals-admin" element={<AdminManuals />} />

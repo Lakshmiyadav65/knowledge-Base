@@ -95,7 +95,7 @@ export default function ArticleCreateNewUser() {
                         <h1 className={styles.articleTitle}>How to Create a New User?</h1>
                         <p className={styles.articleSubtitle}>
                             A complete guide for Super Admins on how to assign user login credentials to a
-                            manufacturer that has already been created in the EnviGuide platform.
+                            manufacturer that has already been created in the Enviguide platform.
                         </p>
                         <div className={styles.articleMeta}>
                             <span className={styles.metaItem}>
@@ -119,7 +119,7 @@ export default function ArticleCreateNewUser() {
                         <h2 className={styles.sectionTitle}>Complete Guide to Create a New User for Manufacturer</h2>
                         <p className={styles.body}>
                             This guide explains how to assign user credentials to a manufacturer that has already been
-                            created in the EnviGuide platform. After creating a manufacturer, you need to create user
+                            created in the Enviguide platform. After creating a manufacturer, you need to create user
                             login credentials so they can access the system.
                         </p>
                         <div className={styles.calloutGreen}>
@@ -132,7 +132,7 @@ export default function ArticleCreateNewUser() {
                             <div>
                                 <p className={styles.calloutTitle}>Super Admin Access Required</p>
                                 <p className={styles.calloutText}>
-                                    Only users with the <strong>Super Admin</strong> role can create new users in EnviGuide.
+                                    Only users with the <strong>Super Admin</strong> role can create new users in Enviguide.
                                     Make sure you are logged in with Super Admin credentials before following this guide.
                                 </p>
                             </div>
@@ -202,13 +202,13 @@ export default function ArticleCreateNewUser() {
 
                         {/* Sub: Access Dashboard */}
                         <div className={styles.subSection}>
-                            <h3 className={styles.subSectionTitle}>Access the EnviGuide Dashboard</h3>
+                            <h3 className={styles.subSectionTitle}>Access the Enviguide Dashboard</h3>
                             <p className={styles.body}>To create a new user for a manufacturer:</p>
                             <div className={styles.numberedSteps}>
                                 <div className={styles.numberedStep}>
                                     <div className={styles.stepCircle}>1</div>
                                     <div className={styles.stepContent}>
-                                        <p className={styles.stepTitle}>Open the EnviGuide dashboard in your web browser</p>
+                                        <p className={styles.stepTitle}>Open the Enviguide dashboard in your web browser</p>
                                     </div>
                                 </div>
                                 <div className={styles.numberedStep}>
@@ -247,7 +247,7 @@ export default function ArticleCreateNewUser() {
                             <div className={styles.imageContainer}>
                                 <img
                                     src="/admin-create-user-step1-settings.png"
-                                    alt="EnviGuide Dashboard — Settings option in the left sidebar"
+                                    alt="Enviguide Dashboard — Settings option in the left sidebar"
                                     className={styles.articleImage}
                                 />
                                 <p className={styles.imageCaption}>STEP 1 — SETTINGS OPTION IN THE LEFT SIDEBAR</p>
@@ -515,7 +515,7 @@ export default function ArticleCreateNewUser() {
                                 <div className={styles.regLinkBox} style={{ margin: '0' }}>
                                     <p className={styles.regLinkLabel}>SHARE THESE DETAILS</p>
                                     <p className={styles.regLinkUrl}>Dashboard URL</p>
-                                    <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>https://enviguide.nextechltd.in/dashboard</p>
+                                    <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>https://Enviguide.nextechltd.in/dashboard</p>
                                     <p className={styles.regLinkUrl}>Username + Password</p>
                                     <p style={{ fontSize: '12px', color: '#6b7280' }}>The credentials you set during user creation</p>
                                 </div>
@@ -529,7 +529,7 @@ export default function ArticleCreateNewUser() {
                                 <div className={styles.regLinkBox} style={{ margin: '0' }}>
                                     <p className={styles.regLinkLabel}>SHARE THESE DETAILS</p>
                                     <p className={styles.regLinkUrl}>Dashboard URL</p>
-                                    <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>https://enviguide.nextechltd.in/dashboard</p>
+                                    <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>https://Enviguide.nextechltd.in/dashboard</p>
                                     <p className={styles.regLinkUrl}>Temporary Username + Password</p>
                                     <p style={{ fontSize: '12px', color: '#6b7280' }}>Note: "You will be asked to change this password on your first login"</p>
                                 </div>

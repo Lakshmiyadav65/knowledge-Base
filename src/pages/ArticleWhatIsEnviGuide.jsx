@@ -5,7 +5,7 @@ const SECTIONS = [
     { id: 'overview', label: 'Overview' },
     { id: 'who-is-it-for', label: 'Who Is It For?' },
     { id: 'key-modules', label: 'Key Modules' },
-    { id: 'why-enviguide', label: 'Why EnviGuide?' },
+    { id: 'why-enviguide', label: 'Why Enviguide?' },
     { id: 'next-steps', label: 'Next Steps' },
 ]
 
@@ -99,7 +99,7 @@ const MODULES = [
     },
 ]
 
-export default function ArticleWhatIsEnviGuide() {
+export default function ArticleWhatIsEnviguide() {
     const navigate = useNavigate()
 
     return (
@@ -143,15 +143,15 @@ export default function ArticleWhatIsEnviGuide() {
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                             <path d="M9 18l6-6-6-6" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <span className={styles.breadCurrent}>What is EnviGuide?</span>
+                        <span className={styles.breadCurrent}>What is Enviguide?</span>
                     </div>
 
                     {/* Article Header */}
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag}>GETTING STARTED</span>
-                        <h1 className={styles.articleTitle}>What is EnviGuide?</h1>
+                        <h1 className={styles.articleTitle}>What is Enviguide?</h1>
                         <p className={styles.articleSubtitle}>
-                            A complete introduction to the EnviGuide Environmental Management Suite — what it does,
+                            A complete introduction to the Enviguide Environmental Management Suite — what it does,
                             who it's built for, and how it helps your organization track, manage, and report
                             on sustainability data with confidence.
                         </p>
@@ -183,12 +183,12 @@ export default function ArticleWhatIsEnviGuide() {
                     <section id="overview" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Overview</h2>
                         <p className={styles.body}>
-                            <strong>EnviGuide</strong> is an end-to-end <strong>Environmental Management Suite</strong> purpose-built
+                            <strong>Enviguide</strong> is an end-to-end <strong>Environmental Management Suite</strong> purpose-built
                             for organizations that need to measure, manage, and improve their environmental impact across
                             the entire product supply chain.
                         </p>
                         <p className={styles.body}>
-                            At its core, EnviGuide helps you calculate your organization's <strong>Product Carbon Footprint (PCF)</strong> —
+                            At its core, Enviguide helps you calculate your organization's <strong>Product Carbon Footprint (PCF)</strong> —
                             the total greenhouse gas emissions associated with a product from cradle to grave: raw material extraction,
                             manufacturing, transport, use phase, and end-of-life disposal.
                         </p>
@@ -206,13 +206,13 @@ export default function ArticleWhatIsEnviGuide() {
                                 <p className={styles.calloutText}>
                                     A PCF measures the total amount of greenhouse gases (in kg CO₂ equivalent) emitted throughout a product's
                                     lifecycle. It covers raw material sourcing, manufacturing, packaging, transport, use, and disposal.
-                                    EnviGuide automates the collection, calculation, and reporting of this data across your entire supply chain.
+                                    Enviguide automates the collection, calculation, and reporting of this data across your entire supply chain.
                                 </p>
                             </div>
                         </div>
 
                         <p className={styles.body}>
-                            EnviGuide is used by sustainability managers, compliance teams, procurement departments, and compliance officers
+                            Enviguide is used by sustainability managers, compliance teams, procurement departments, and compliance officers
                             to build a single, auditable source of truth for their organization's environmental performance.
                         </p>
                     </section>
@@ -221,7 +221,7 @@ export default function ArticleWhatIsEnviGuide() {
                     <section id="who-is-it-for" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Who Is It For?</h2>
                         <p className={styles.body}>
-                            EnviGuide is designed for a wide range of roles within an organization. Here's how different teams benefit:
+                            Enviguide is designed for a wide range of roles within an organization. Here's how different teams benefit:
                         </p>
 
                         <div className={styles.rolesGrid}>
@@ -249,7 +249,7 @@ export default function ArticleWhatIsEnviGuide() {
                                 {
                                     role: 'Suppliers & Partners',
                                     icon: '🤝',
-                                    desc: "Respond to buyer PCF requests through the guided Supplier Questionnaire — no prior knowledge of carbon accounting is required. EnviGuide's built-in guidance makes it easy.",
+                                    desc: "Respond to buyer PCF requests through the guided Supplier Questionnaire — no prior knowledge of carbon accounting is required. Enviguide's built-in guidance makes it easy.",
                                 },
                                 {
                                     role: 'Executive Leadership',
@@ -272,7 +272,7 @@ export default function ArticleWhatIsEnviGuide() {
                     <section id="key-modules" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Key Modules</h2>
                         <p className={styles.body}>
-                            EnviGuide is organized into <strong>8 specialized modules</strong>, each accessible from the left sidebar of the platform.
+                            Enviguide is organized into <strong>8 specialized modules</strong>, each accessible from the left sidebar of the platform.
                             Together they cover the full journey from data collection to compliance reporting.
                         </p>
 
@@ -291,11 +291,11 @@ export default function ArticleWhatIsEnviGuide() {
                         </div>
                     </section>
 
-                    {/* ── Section 4 — Why EnviGuide ── */}
+                    {/* ── Section 4 — Why Enviguide ── */}
                     <section id="why-enviguide" className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Why EnviGuide?</h2>
+                        <h2 className={styles.sectionTitle}>Why Enviguide?</h2>
                         <p className={styles.body}>
-                            There are many sustainability tools available — so what makes EnviGuide different?
+                            There are many sustainability tools available — so what makes Enviguide different?
                         </p>
 
                         <div className={styles.whyList}>
@@ -303,7 +303,7 @@ export default function ArticleWhatIsEnviGuide() {
                                 {
                                     num: '01',
                                     title: 'Built for Supply Chain PCF',
-                                    body: 'Unlike generic carbon tools, EnviGuide is specifically designed around the product carbon footprint workflow — from sending supplier questionnaires all the way to lifecycle emission modeling.',
+                                    body: 'Unlike generic carbon tools, Enviguide is specifically designed around the product carbon footprint workflow — from sending supplier questionnaires all the way to lifecycle emission modeling.',
                                 },
                                 {
                                     num: '02',
@@ -341,7 +341,7 @@ export default function ArticleWhatIsEnviGuide() {
                     <section id="next-steps" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Next Steps</h2>
                         <p className={styles.body}>
-                            Now that you know what EnviGuide is, here's where to go next:
+                            Now that you know what Enviguide is, here's where to go next:
                         </p>
 
                         <div className={styles.nextGrid}>
@@ -391,7 +391,7 @@ export default function ArticleWhatIsEnviGuide() {
                         <div>
                             <span className={styles.guidanceLabel}>Guidance Notes</span>
                             <p className={styles.guidanceText}>
-                                This article is reviewed quarterly and reflects the current EnviGuide Management Suite.
+                                This article is reviewed quarterly and reflects the current Enviguide Management Suite.
                                 Platform features may vary based on your subscription tier. Last updated: February 2026.
                             </p>
                         </div>

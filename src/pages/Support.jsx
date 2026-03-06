@@ -53,7 +53,7 @@ export default function Support() {
                     email: form.email,
                     subject: `Support: ${CATEGORIES.find(c => c.value === form.category)?.label || form.category}`,
                     message: form.description,
-                    from_name: "EnviGuide Dashboard"
+                    from_name: "Enviguide Dashboard"
                 }),
             });
 
@@ -63,7 +63,7 @@ export default function Support() {
             } else {
                 setErrors({ submit: result.message || "Something went wrong. Please try again." });
             }
-        } catch (error) {
+        } catch {
             setErrors({ submit: "Network error. Please try again later." });
         } finally {
             setSending(false)
@@ -87,7 +87,7 @@ export default function Support() {
                             <path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
-                    <span className={styles.brandName}>EnviGuide Support</span>
+                    <span className={styles.brandName}>Enviguide Support</span>
                 </div>
             </div>
 

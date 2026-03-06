@@ -314,7 +314,7 @@ const QUESTIONS = {
             why: 'Material composition is one of the most significant drivers of product carbon footprint. Accurate breakdown enables precise lifecycle emission calculation and material impact assessment.',
         },
         {
-            id: 'q521', num: 'QUESTION 52.1', title: 'EnviGuide Support for Material Identification', defaultOpen: false,
+            id: 'q521', num: 'QUESTION 52.1', title: 'Enviguide Support for Material Identification', defaultOpen: false,
             what: 'Whether assistance is required to estimate or identify detailed material composition.',
             why: 'Accurate material data ensures reliability of environmental calculations and avoids assumptions that could distort carbon footprint results.',
         },
@@ -438,7 +438,7 @@ const QUESTIONS = {
             why: 'Transport mode significantly impacts carbon intensity due to varying emission factors.',
         },
         {
-            id: 'q741', num: 'QUESTION 74.1', title: 'EnviGuide Support for Transport Emissions', defaultOpen: false,
+            id: 'q741', num: 'QUESTION 74.1', title: 'Enviguide Support for Transport Emissions', defaultOpen: false,
             what: 'Whether assistance is required to calculate transport-related emissions.',
             why: 'Accurate emission calculation improves Scope 3 completeness and reporting reliability.',
         },

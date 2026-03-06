@@ -98,7 +98,7 @@ export default function ArticleDocumentMaster() {
                     <section id="understanding" className={styles.section}>
                         <h2 className={styles.sectionTitle}>Section 1: Understanding Document Master</h2>
                         <p className={styles.body}>
-                            Document Master is a specialized feature in EnviGuide that functions as a single, <strong>unified repository</strong> for all supporting documents and visual media associated with your PCF records.
+                            Document Master is a specialized feature in Enviguide that functions as a single, <strong>unified repository</strong> for all supporting documents and visual media associated with your PCF records.
                         </p>
                         <div className={styles.calloutGreen}>
                             <div className={styles.calloutIcon}>
@@ -132,7 +132,7 @@ export default function ArticleDocumentMaster() {
                             <div className={styles.numberedStep}>
                                 <div className={styles.stepCircle}>1</div>
                                 <div className={styles.stepBody}>
-                                    <div className={styles.stepTitle}>Login to EnviGuide</div>
+                                    <div className={styles.stepTitle}>Login to Enviguide</div>
                                     <p>Navigate to the Management Suite and use your credentials.</p>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@ export default function ArticleDocumentMaster() {
 
                     <section className={styles.section} style={{ borderTop: '1px solid #f3f4f6', paddingTop: '40px' }}>
                         <p className={styles.body} style={{ fontStyle: 'italic', color: '#6b7280' }}>
-                            This comprehensive guide covers all aspects of Document Master functionality and should serve as your complete reference for understanding and using this essential feature in EnviGuide PCF management.
+                            This comprehensive guide covers all aspects of Document Master functionality and should serve as your complete reference for understanding and using this essential feature in Enviguide PCF management.
                         </p>
                     </section>
                     <div className={styles.articleFooterNav}>

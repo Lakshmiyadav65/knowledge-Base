@@ -136,7 +136,7 @@ export default function ArticleManageAuthorizations() {
                     {/* Article Header */}
                     <div className={styles.articleHeader}>
                         <span className={styles.articleTag}>ADMIN MANUALS · DOCUMENT #03</span>
-                        <h1 className={styles.articleTitle}>Complete Guide to Manage User Authorizations in EnviGuide</h1>
+                        <h1 className={styles.articleTitle}>Complete Guide to Manage User Authorizations in Enviguide</h1>
                         <p className={styles.articleSubtitle}>
                             Configure and manage module-level permissions for different users and roles to ensure proper
                             access control, data security, and operational governance.
@@ -163,7 +163,7 @@ export default function ArticleManageAuthorizations() {
                         <h2 className={styles.sectionTitle}>Overview</h2>
                         <p className={styles.body}>
                             This guide explains how a <strong>Super Admin</strong> can configure and manage module-level
-                            permissions for different users and roles within the EnviGuide platform. This ensures proper
+                            permissions for different users and roles within the Enviguide platform. This ensures proper
                             access control, data security, and operational governance.
                         </p>
                         <div className={styles.calloutGreen}>
@@ -176,7 +176,7 @@ export default function ArticleManageAuthorizations() {
                             <div>
                                 <p className={styles.calloutTitle}>Super Admin Access Required</p>
                                 <p className={styles.calloutText}>
-                                    Only <strong>Super Admins</strong> can configure user authorizations and manage role permissions in EnviGuide.
+                                    Only <strong>Super Admins</strong> can configure user authorizations and manage role permissions in Enviguide.
                                 </p>
                             </div>
                         </div>
@@ -199,7 +199,7 @@ export default function ArticleManageAuthorizations() {
                         </div>
                         <p className={styles.body}>From here, all system configuration actions begin.</p>
                         <div className={styles.imageContainer}>
-                            <img src="/admin-auth-step1-dashboard.png" alt="EnviGuide main dashboard with PCF metrics" className={styles.articleImage} />
+                            <img src="/admin-auth-step1-dashboard.png" alt="Enviguide main dashboard with PCF metrics" className={styles.articleImage} />
                             <p className={styles.imageCaption}>STEP 1 — MAIN DASHBOARD</p>
                         </div>
                     </section>

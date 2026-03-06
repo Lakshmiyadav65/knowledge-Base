@@ -162,7 +162,7 @@ export default function ArticleGetAccess() {
                                     </p>
                                     <div className={styles.calloutBlue} style={{ margin: '14px 0 0' }}>
                                         <p className={styles.calloutText} style={{ fontSize: '13px' }}>
-                                            🔗 <strong>Official Platform URL:</strong> <a href="https://enviguide.nextechltd.in" target="_blank" rel="noopener noreferrer">enviguide.nextechltd.in</a>
+                                            🔗 <strong>Official Platform URL:</strong> <a href="https://Enviguide.nextechltd.in" target="_blank" rel="noopener noreferrer">Enviguide.nextechltd.in</a>
                                         </p>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ export default function ArticleGetAccess() {
                                             alt="Enviguide Login Screen"
                                             className={styles.articleImage}
                                         />
-                                        <p className={styles.imageCaption}>OFFICIAL ENVIGUIDE LOGIN PORTAL</p>
+                                        <p className={styles.imageCaption}>OFFICIAL Enviguide LOGIN PORTAL</p>
                                     </div>
                                 </div>
                             </div>
