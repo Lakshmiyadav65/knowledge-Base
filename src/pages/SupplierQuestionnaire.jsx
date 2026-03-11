@@ -9,12 +9,12 @@ const listIcon = (
 )
 
 const SECTIONS = [
-    { id: 'section1', label: 'Section 1: Organization Details', icon: listIcon },
-    { id: 'section2', label: 'Section 2: Product Details', icon: listIcon },
-    { id: 'section3', label: 'Section 3: Scope 1 - Direct Emissions', icon: listIcon },
-    { id: 'section4', label: 'Section 4: Scope 2 - Indirect Emissions', icon: listIcon },
-    { id: 'section5', label: 'Section 5: Scope 3 - Other Indirect Emissions', icon: listIcon },
-    { id: 'section6', label: 'Section 6: Scope 4 - Avoided Emissions', icon: listIcon },
+    { id: 'section1', num: 'Section 1', title: 'Organization', icon: listIcon },
+    { id: 'section2', num: 'Section 2', title: 'Product', icon: listIcon },
+    { id: 'section3', num: 'Section 3', title: 'Scope 1 (Direct)', icon: listIcon },
+    { id: 'section4', num: 'Section 4', title: 'Scope 2 (Indirect)', icon: listIcon },
+    { id: 'section5', num: 'Section 5', title: 'Scope 3 (Indirect)', icon: listIcon },
+    { id: 'section6', num: 'Section 6', title: 'Scope 4 (Avoided)', icon: listIcon },
 ]
 
 const SECTION_DESCS = {
@@ -25,55 +25,55 @@ const SECTION_DESCS = {
 const QUESTIONS = {
     section1: [
         {
-            id: 'q01', num: 'QUESTION 01', title: 'Please enter the name of your organization? (Mandatory)', defaultOpen: true,
+            id: 'q01', num: 'QUESTION 01', title: 'Please enter the name of your organization?', mandatory: true, defaultOpen: true,
             what: 'The registered legal name of your organization as it appears in official government and tax documentation. If you are a subsidiary, provide the name of the reporting entity responsible for this supply chain.',
             why: 'Accurate legal identification ensures traceability, regulatory compliance, and correct mapping of emissions data to the appropriate reporting entity. It prevents duplication or misallocation in sustainability reporting.',
             instructions: 'Enter the full legal name of your organization. Avoid abbreviations unless they are officially registered.',
         },
         {
-            id: 'q02', num: 'QUESTION 02', title: 'What is your core business activities? (Mandatory)', defaultOpen: false,
+            id: 'q02', num: 'QUESTION 02', title: 'What is your core business activities?', mandatory: true, defaultOpen: false,
             what: 'The primary business activity that best represents your organization\'s main operations within the supply chain.',
             why: 'Understanding your operational category helps classify emissions profiles, apply appropriate industry benchmarks, and ensure sector-specific accuracy in Product Carbon Footprint (PCF) calculations.',
             instructions: 'Select the option that best describes your primary business activity from the dropdown list.\nYou may use the search icon to quickly find your category.\n\nExamples include:\n\nTier-1 Manufacturing\nTier-2 Component Manufacturing\nTier-3 Raw Material Supply\nElectronics Manufacturing\nMechanical/Metal Manufacturing\nPlastics/Polymer Manufacturing\nAssembly & Integration\nLogistics & Warehousing\nSurface Treatment / Plating / Coating\nChemical / Resin Production\nBattery / Energy Storage Production\nRecycling / Waste Treatment Food Processing\nPower generation sector\nConstruction & Real Estate\nShipping Industry\nPharmaceuticals Manufacturing\nLogistics & Transportation\nTechnology development & Services (IT)\nOthers\n\nIf none of the listed options apply, select “Others” and specify your activity in the open text field.\nPlease choose the category that most closely represents your main operation.',
         },
         {
-            id: 'q03', num: 'QUESTION 03', title: 'Please enter your Designation/Role/Title? (Mandatory)', defaultOpen: false,
+            id: 'q03', num: 'QUESTION 03', title: 'Please enter your Designation/Role/Title?', mandatory: true, defaultOpen: false,
             what: 'Your official job title or designation within the organization submitting this data.',
             why: 'Identifying the responsible individual ensures accountability, data credibility, and traceability for audit and verification purposes.',
             instructions: 'Enter your official designation within the organization. This ensures the response is traceable and authorized.',
         },
         {
-            id: 'q04', num: 'QUESTION 04', title: 'Please enter your e-mail address? (Mandatory)', defaultOpen: false,
+            id: 'q04', num: 'QUESTION 04', title: 'Please enter your e-mail address?', mandatory: true, defaultOpen: false,
             what: 'Your official company email address for communication and verification.',
             why: 'This enables secure follow-ups, clarification requests, and validation of submitted data, ensuring reporting transparency.',
             instructions: 'Provide your official company email address. This will be used for communication, clarification or validation if required.',
         },
         {
-            id: 'q05', num: 'QUESTION 05', title: 'How many employees does your organization have? (Mandatory)', defaultOpen: false,
+            id: 'q05', num: 'QUESTION 05', title: 'How many employees does your organization have?', mandatory: true, defaultOpen: false,
             what: 'The total number of employees or employee range within your organization.',
             why: 'Organization size helps contextualize emissions intensity, operational scale, and benchmarking comparisons within similar industry categories.',
             instructions: 'Select the appropriate employee range from the dropdown.\nIf you prefer to provide the exact number, enter it in the numeric input box. This helps classify your organization size for reporting and benchmarking purposes.',
         },
         {
-            id: 'q06', num: 'QUESTION 06', title: 'What is your organization\'s annual revenue? (Mandatory)', defaultOpen: false,
+            id: 'q06', num: 'QUESTION 06', title: 'What is your organization\'s annual revenue?', mandatory: true, defaultOpen: false,
             what: 'Your organization\'s annual revenue for the selected reporting period.',
             why: 'Revenue data supports normalization of emissions metrics and improves sustainability performance comparisons across entities of different economic scale.',
             instructions: 'Select the revenue range that best represents your organization.\nIf required, provide the exact annual revenue value in the numeric input box. Revenue data supports organizational classification and sustainability reporting alignment.',
         },
         {
-            id: 'q07', num: 'QUESTION 07', title: 'Please enter the organizational annual reporting period? (Mandatory)', defaultOpen: false,
+            id: 'q07', num: 'QUESTION 07', title: 'Please enter the organizational annual reporting period?', mandatory: true, defaultOpen: false,
             what: 'The specific reporting year for which emissions and operational data are being submitted.',
             why: 'Consistent reporting periods ensure accurate year-on-year comparison and alignment with PCF boundary conditions.',
             instructions: 'Select the reporting year (YYYY format) from the dropdown list (2020–2050).\nPlease ensure the selected year matches the year for which emissions and energy data are being reported.',
         },
         {
-            id: 'q08', num: 'QUESTION 08', title: 'Do you have Site or Organizational level Scope 1, 2, and 3 emissions data available? (Mandatory)', defaultOpen: false,
+            id: 'q08', num: 'QUESTION 08', title: 'Do you have Site or Organizational level Scope 1, 2, and 3 emissions data available?', mandatory: true, defaultOpen: false,
             what: 'Whether your organization has calculated emissions data at the site or organizational level for Scope 1, 2, and 3.',
             why: 'This determines the maturity of your carbon accounting system and allows integration of verified emissions data into PCF modeling.',
             instructions: 'Indicate whether your organization has site-level or organization-level emissions data available.\nSelect:\nYes – if emissions have been calculated\nNo – if emissions data is not currently available',
         },
         {
-            id: 'q09', num: 'QUESTION 09', title: 'Provide Emission Data If “Yes”? (Mandatory)', defaultOpen: false,
+            id: 'q09', num: 'QUESTION 09', title: 'Provide Emission Data If “Yes”?', mandatory: true, defaultOpen: false,
             what: 'Total Scope 1, Scope 2, and Scope 3 emissions for each manufacturing location.',
             why: 'Site-level emissions enable accurate allocation of environmental impact across facilities and improve precision in cradle-to-gate footprint calculations.',
             instructions: 'If you have selected “Yes”, you must provide emission data in the table below.\n\nPlease enter the details manually for each manufacturing location:\nCountry Code | Scope 1 | Scope 2 | Scope 3\n\nClick on “Add row” button to add additional locations.',
@@ -515,16 +515,84 @@ const QUESTIONS = {
 
 function AccordionItem({ q }) {
     const [open, setOpen] = useState(q.defaultOpen)
+    const [showFullInstructions, setShowFullInstructions] = useState(false)
 
-    // Helper to format text with line breaks
-    const formatContent = (text) => {
+    // Helper to format text with line breaks and detect/style lists
+    const formatContent = (text, truncate = false) => {
         if (!text) return null
-        return text.split('\n').map((line, i) => (
-            <span key={i}>
-                {line.trim() === '' ? <br /> : line}
-                {i < text.split('\n').length - 1 && <br />}
-            </span>
-        ))
+        const lines = text.split('\n')
+        
+        let result = []
+        let currentPills = []
+        let inList = false
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim()
+            
+            // Detect the start of an examples list
+            if (line.toLowerCase().startsWith('examples include:')) {
+                result.push(<p key={`text-${i}`} className={styles.instructionLine}>{line}</p>)
+                inList = true
+                continue
+            }
+
+            // If we are in a list and the line looks like a list item (not too long, no full sentences)
+            if (inList && line !== '' && line.length < 50 && !line.includes('.')) {
+                currentPills.push(line)
+                
+                // If it's the last line or the next line is not a list item, flush pills
+                const nextLine = lines[i + 1]?.trim()
+                if (!nextLine || nextLine === '' || nextLine.length >= 50 || nextLine.includes('.') || nextLine.toLowerCase().startsWith('if none')) {
+                    result.push(
+                        <div key={`pills-${i}`} className={styles.pillGrid}>
+                            {currentPills.map((pill, pi) => (
+                                <span key={pi} className={styles.pill}>{pill}</span>
+                            ))}
+                        </div>
+                    )
+                    currentPills = []
+                    inList = false
+                }
+            } else {
+                if (line === '') {
+                    result.push(<br key={`br-${i}`} />)
+                } else {
+                    result.push(<p key={`text-${i}`} className={styles.instructionLine}>{line}</p>)
+                }
+                inList = false
+            }
+        }
+
+        if (truncate && result.length > 5 && !showFullInstructions) {
+            return (
+                <div className={styles.truncateWrapper}>
+                    {result.slice(0, 5)}
+                    <button 
+                        className={styles.readMoreBtn} 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setShowFullInstructions(true);
+                        }}
+                    >
+                        ... View All Examples
+                    </button>
+                </div>
+            )
+        }
+
+        return (
+            <>
+                {result}
+                {truncate && showFullInstructions && (
+                    <button 
+                        className={styles.readLessBtn}
+                        onClick={() => setShowFullInstructions(false)}
+                    >
+                        Show Less
+                    </button>
+                )}
+            </>
+        )
     }
 
     return (
@@ -532,7 +600,12 @@ function AccordionItem({ q }) {
             <button className={styles.accordionHeader} onClick={() => setOpen(o => !o)}>
                 <div className={styles.accordionLeft}>
                     <span className={styles.qNum}>{q.num}</span>
-                    <span className={styles.qTitle}>{q.title}</span>
+                    <span className={styles.qTitle}>
+                        {q.title.replace(' (Mandatory)', '')}
+                        {(q.mandatory || q.title.includes('(Mandatory)')) && (
+                            <span className={styles.mandatoryStar} title="Mandatory">*</span>
+                        )}
+                    </span>
                 </div>
                 <svg
                     className={`${styles.chevron} ${open ? styles.chevronUp : ''}`}
@@ -560,7 +633,7 @@ function AccordionItem({ q }) {
                         <div className={styles.instructionBlock}>
                             <p className={styles.colLabel}>SUPPLIER INSTRUCTIONS</p>
                             <div className={styles.instructionBox}>
-                                <p className={styles.colText}>{formatContent(q.instructions)}</p>
+                                {formatContent(q.instructions, true)}
                             </div>
                         </div>
                     )}
@@ -575,7 +648,8 @@ export default function SupplierQuestionnaire() {
     const [activeSection, setActiveSection] = useState('section1')
     const [search, setSearch] = useState('')
 
-    const activeSectionLabel = SECTIONS.find(s => s.id === activeSection)?.label ?? 'Section 1'
+    const currentSection = SECTIONS.find(s => s.id === activeSection)
+    const activeSectionLabel = currentSection ? `${currentSection.num}: ${currentSection.title}` : 'Section 1'
     const activeSectionDesc = SECTION_DESCS[activeSection] ?? null
     const activeQuestions = (QUESTIONS[activeSection] || []).filter(q =>
         q.type === 'group' ||
@@ -603,7 +677,10 @@ export default function SupplierQuestionnaire() {
                                 onClick={() => setActiveSection(s.id)}
                             >
                                 <span className={styles.sidebarIcon}>{s.icon}</span>
-                                {s.label}
+                                <div className={styles.sidebarText}>
+                                    <span className={styles.sidebarSectionNum}>{s.num}</span>
+                                    <span className={styles.sidebarSectionTitle}>{s.title}</span>
+                                </div>
                             </button>
                         ))}
                     </nav>
@@ -647,7 +724,7 @@ export default function SupplierQuestionnaire() {
                     <div className={styles.sectionTitle}>
                         <div className={styles.sectionBar} />
                         <h2 className={styles.sectionHeading}>
-                            {SECTIONS.find(s => s.id === activeSection)?.label}
+                            {currentSection?.num}: {currentSection?.title}
                         </h2>
                     </div>
 
