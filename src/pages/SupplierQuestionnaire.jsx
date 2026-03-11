@@ -9,12 +9,12 @@ const listIcon = (
 )
 
 const SECTIONS = [
-    { id: 'section1', label: 'Section 1', icon: listIcon },
-    { id: 'section2', label: 'Section 2', icon: listIcon },
-    { id: 'section3', label: 'Section 3', icon: listIcon },
-    { id: 'section4', label: 'Section 4', icon: listIcon },
-    { id: 'section5', label: 'Section 5', icon: listIcon },
-    { id: 'section6', label: 'Section 6', icon: listIcon },
+    { id: 'section1', label: 'Section 1: Organization Details', icon: listIcon },
+    { id: 'section2', label: 'Section 2: Product Details', icon: listIcon },
+    { id: 'section3', label: 'Section 3: Scope 1 - Direct Emissions', icon: listIcon },
+    { id: 'section4', label: 'Section 4: Scope 2 - Indirect Emissions', icon: listIcon },
+    { id: 'section5', label: 'Section 5: Scope 3 - Other Indirect Emissions', icon: listIcon },
+    { id: 'section6', label: 'Section 6: Scope 4 - Avoided Emissions', icon: listIcon },
 ]
 
 const SECTION_DESCS = {
@@ -25,49 +25,58 @@ const SECTION_DESCS = {
 const QUESTIONS = {
     section1: [
         {
-            id: 'q01', num: 'QUESTION 01', title: 'Organization Name', defaultOpen: true,
+            id: 'q01', num: 'QUESTION 01', title: 'Please enter the name of your organization? (Mandatory)', defaultOpen: true,
             what: 'The registered legal name of your organization as it appears in official government and tax documentation. If you are a subsidiary, provide the name of the reporting entity responsible for this supply chain.',
             why: 'Accurate legal identification ensures traceability, regulatory compliance, and correct mapping of emissions data to the appropriate reporting entity. It prevents duplication or misallocation in sustainability reporting.',
+            instructions: 'Enter the full legal name of your organization. Avoid abbreviations unless they are officially registered.',
         },
         {
-            id: 'q02', num: 'QUESTION 02', title: 'Core Business Activities', defaultOpen: false,
+            id: 'q02', num: 'QUESTION 02', title: 'What is your core business activities? (Mandatory)', defaultOpen: false,
             what: 'The primary business activity that best represents your organization\'s main operations within the supply chain.',
             why: 'Understanding your operational category helps classify emissions profiles, apply appropriate industry benchmarks, and ensure sector-specific accuracy in Product Carbon Footprint (PCF) calculations.',
+            instructions: 'Select the option that best describes your primary business activity from the dropdown list.\nYou may use the search icon to quickly find your category.\n\nExamples include:\n\nTier-1 Manufacturing\nTier-2 Component Manufacturing\nTier-3 Raw Material Supply\nElectronics Manufacturing\nMechanical/Metal Manufacturing\nPlastics/Polymer Manufacturing\nAssembly & Integration\nLogistics & Warehousing\nSurface Treatment / Plating / Coating\nChemical / Resin Production\nBattery / Energy Storage Production\nRecycling / Waste Treatment Food Processing\nPower generation sector\nConstruction & Real Estate\nShipping Industry\nPharmaceuticals Manufacturing\nLogistics & Transportation\nTechnology development & Services (IT)\nOthers\n\nIf none of the listed options apply, select “Others” and specify your activity in the open text field.\nPlease choose the category that most closely represents your main operation.',
         },
         {
-            id: 'q03', num: 'QUESTION 03', title: 'Designation / Role / Title', defaultOpen: false,
+            id: 'q03', num: 'QUESTION 03', title: 'Please enter your Designation/Role/Title? (Mandatory)', defaultOpen: false,
             what: 'Your official job title or designation within the organization submitting this data.',
             why: 'Identifying the responsible individual ensures accountability, data credibility, and traceability for audit and verification purposes.',
+            instructions: 'Enter your official designation within the organization. This ensures the response is traceable and authorized.',
         },
         {
-            id: 'q04', num: 'QUESTION 04', title: 'Official Email Address', defaultOpen: false,
+            id: 'q04', num: 'QUESTION 04', title: 'Please enter your e-mail address? (Mandatory)', defaultOpen: false,
             what: 'Your official company email address for communication and verification.',
             why: 'This enables secure follow-ups, clarification requests, and validation of submitted data, ensuring reporting transparency.',
+            instructions: 'Provide your official company email address. This will be used for communication, clarification or validation if required.',
         },
         {
-            id: 'q05', num: 'QUESTION 05', title: 'Number of Employees', defaultOpen: false,
+            id: 'q05', num: 'QUESTION 05', title: 'How many employees does your organization have? (Mandatory)', defaultOpen: false,
             what: 'The total number of employees or employee range within your organization.',
             why: 'Organization size helps contextualize emissions intensity, operational scale, and benchmarking comparisons within similar industry categories.',
+            instructions: 'Select the appropriate employee range from the dropdown.\nIf you prefer to provide the exact number, enter it in the numeric input box. This helps classify your organization size for reporting and benchmarking purposes.',
         },
         {
-            id: 'q06', num: 'QUESTION 06', title: 'Annual Revenue', defaultOpen: false,
+            id: 'q06', num: 'QUESTION 06', title: 'What is your organization\'s annual revenue? (Mandatory)', defaultOpen: false,
             what: 'Your organization\'s annual revenue for the selected reporting period.',
             why: 'Revenue data supports normalization of emissions metrics and improves sustainability performance comparisons across entities of different economic scale.',
+            instructions: 'Select the revenue range that best represents your organization.\nIf required, provide the exact annual revenue value in the numeric input box. Revenue data supports organizational classification and sustainability reporting alignment.',
         },
         {
-            id: 'q07', num: 'QUESTION 07', title: 'Reporting Period', defaultOpen: false,
+            id: 'q07', num: 'QUESTION 07', title: 'Please enter the organizational annual reporting period? (Mandatory)', defaultOpen: false,
             what: 'The specific reporting year for which emissions and operational data are being submitted.',
             why: 'Consistent reporting periods ensure accurate year-on-year comparison and alignment with PCF boundary conditions.',
+            instructions: 'Select the reporting year (YYYY format) from the dropdown list (2020–2050).\nPlease ensure the selected year matches the year for which emissions and energy data are being reported.',
         },
         {
-            id: 'q08', num: 'QUESTION 08', title: 'Availability of Scope 1, 2, and 3 Data', defaultOpen: false,
+            id: 'q08', num: 'QUESTION 08', title: 'Do you have Site or Organizational level Scope 1, 2, and 3 emissions data available? (Mandatory)', defaultOpen: false,
             what: 'Whether your organization has calculated emissions data at the site or organizational level for Scope 1, 2, and 3.',
             why: 'This determines the maturity of your carbon accounting system and allows integration of verified emissions data into PCF modeling.',
+            instructions: 'Indicate whether your organization has site-level or organization-level emissions data available.\nSelect:\nYes – if emissions have been calculated\nNo – if emissions data is not currently available',
         },
         {
-            id: 'q09', num: 'QUESTION 09', title: 'Emissions Data (If Available)', defaultOpen: false,
+            id: 'q09', num: 'QUESTION 09', title: 'Provide Emission Data If “Yes”? (Mandatory)', defaultOpen: false,
             what: 'Total Scope 1, Scope 2, and Scope 3 emissions for each manufacturing location.',
             why: 'Site-level emissions enable accurate allocation of environmental impact across facilities and improve precision in cradle-to-gate footprint calculations.',
+            instructions: 'If you have selected “Yes”, you must provide emission data in the table below.\n\nPlease enter the details manually for each manufacturing location:\nCountry Code | Scope 1 | Scope 2 | Scope 3\n\nClick on “Add row” button to add additional locations.',
         },
     ],
 
@@ -507,6 +516,17 @@ const QUESTIONS = {
 function AccordionItem({ q }) {
     const [open, setOpen] = useState(q.defaultOpen)
 
+    // Helper to format text with line breaks
+    const formatContent = (text) => {
+        if (!text) return null
+        return text.split('\n').map((line, i) => (
+            <span key={i}>
+                {line.trim() === '' ? <br /> : line}
+                {i < text.split('\n').length - 1 && <br />}
+            </span>
+        ))
+    }
+
     return (
         <div className={`${styles.accordion} ${open ? styles.accordionOpen : ''}`}>
             <button className={styles.accordionHeader} onClick={() => setOpen(o => !o)}>
@@ -527,14 +547,23 @@ function AccordionItem({ q }) {
                     <div className={styles.accordionGrid}>
                         <div className={styles.accordionCol}>
                             <p className={styles.colLabel}>WHAT WE ARE ASKING</p>
-                            <p className={styles.colText}>{q.what}</p>
+                            <p className={styles.colText}>{formatContent(q.what)}</p>
                         </div>
                         <div className={styles.accordionDivider} />
                         <div className={styles.accordionCol}>
                             <p className={styles.colLabel}>WHY THIS MATTERS</p>
-                            <p className={styles.colText}>{q.why}</p>
+                            <p className={styles.colText}>{formatContent(q.why)}</p>
                         </div>
                     </div>
+                    
+                    {q.instructions && (
+                        <div className={styles.instructionBlock}>
+                            <p className={styles.colLabel}>SUPPLIER INSTRUCTIONS</p>
+                            <div className={styles.instructionBox}>
+                                <p className={styles.colText}>{formatContent(q.instructions)}</p>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
@@ -617,7 +646,9 @@ export default function SupplierQuestionnaire() {
                     {/* Section Title */}
                     <div className={styles.sectionTitle}>
                         <div className={styles.sectionBar} />
-                        <h2 className={styles.sectionHeading}>{activeSectionLabel}</h2>
+                        <h2 className={styles.sectionHeading}>
+                            {SECTIONS.find(s => s.id === activeSection)?.label}
+                        </h2>
                     </div>
 
                     {/* Section Description Banner (Scope 4 intro etc.) */}
